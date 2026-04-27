@@ -1,21 +1,17 @@
-import Image from 'next/image'
-import PaginationLinks from '../../pagination-links'
+import ImageSubpage from '../../image-subpage'
 import illo from '../illustration10.png'
 
 export default function Deer() {
   return (
-    <>
-      <div className="container flex flex-col items-center gap-10 py-20">
-        <h2 className="font-normal md:font-medium text-3xl md:text-4xl lg:text-5xl">Deer</h2>
-        <Image src={illo} alt="Deer Illustration" className="max-w-full" />
-      </div>
-
-      <PaginationLinks
-        prev="Fashion Illustration"
-        prevLink="/illustrations/fashion-illustration"
-        next="Nymph"
-        nextLink="/illustrations/nymph"
-      />
-    </>
+    <ImageSubpage
+      title="Deer"
+      image={illo}
+      alt="Deer Illustration"
+      galleryLink="/illustrations"
+      prevLabel="Fashion Illustration"
+      prevLink="/illustrations/fashion-illustration"
+      nextLabel="Nymph"
+      nextLink="/illustrations/nymph"
+    />
   )
 }

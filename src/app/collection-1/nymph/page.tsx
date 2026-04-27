@@ -1,21 +1,17 @@
-import Image from 'next/image'
-import PaginationLinks from '../../pagination-links'
+import ImageSubpage from '../../image-subpage'
 import illo from '../../illustrations/illustration11.png'
 
 export default function Nymph() {
   return (
-    <>
-      <div className="container flex flex-col items-center gap-10 py-20">
-        <h2 className="font-normal md:font-medium text-3xl md:text-4xl lg:text-5xl">Nymph</h2>
-        <Image src={illo} alt="Nymph Illustration" className="max-w-full" />
-      </div>
-
-      <PaginationLinks
-        prev="Deer"
-        prevLink="/collection-1/deer"
-        next="Bubblegum Girl"
-        nextLink="/collection-1/bubblegum-girl"
-      />
-    </>
+    <ImageSubpage
+      title="Nymph"
+      image={illo}
+      alt="Nymph Illustration"
+      galleryLink="/collection-1"
+      prevLabel="Deer"
+      prevLink="/collection-1/deer"
+      nextLabel="Bubblegum Girl"
+      nextLink="/collection-1/bubblegum-girl"
+    />
   )
 }

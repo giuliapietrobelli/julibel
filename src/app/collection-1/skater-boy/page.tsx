@@ -1,21 +1,17 @@
-import Image from 'next/image'
-import PaginationLinks from '../../pagination-links'
+import ImageSubpage from '../../image-subpage'
 import illo from '../../illustrations/illustration1.png'
 
 export default function SkaterBoy() {
   return (
-    <>
-      <div className="container flex flex-col items-center gap-10 py-20">
-        <h2 className="font-normal md:font-medium text-3xl md:text-4xl lg:text-5xl">Skater Boy</h2>
-        <Image src={illo} alt="Skater Boy Illustration" className="max-w-full" />
-      </div>
-
-      <PaginationLinks
-        prev="Pattern Collection"
-        prevLink="/collection-1"
-        next="Bloom"
-        nextLink="/collection-1/bloom"
-      />
-    </>
+    <ImageSubpage
+      title="Skater Boy"
+      image={illo}
+      alt="Skater Boy Illustration"
+      galleryLink="/collection-1"
+      prevLabel="Pattern Collection"
+      prevLink="/collection-1"
+      nextLabel="Bloom"
+      nextLink="/collection-1/bloom"
+    />
   )
 }
