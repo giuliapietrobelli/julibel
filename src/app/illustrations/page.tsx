@@ -1,7 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import ProjectIntro from '../project-intro'
 import PaginationLinks from '../pagination-links'
+import GalleryGrid from '../gallery-grid'
 import illo1 from "./illustration1.png"
 import illo2 from "./illustration2.png"
 import illo3 from "./illustration3.png"
@@ -39,17 +38,7 @@ export default function Illustrations() {
           A selection of illustrations made with Procreate, Illustrator, and Photoshop
         </ProjectIntro>
 
-        <div className="columns-2 md:columns-3 gap-6">
-          {images.map((image) => (
-            <Link key={image.href} href={image.href} className="block mb-6 leading-[0]">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                className="w-full hover:opacity-75 transition-opacity duration-500"
-              />
-            </Link>
-          ))}
-        </div>
+        <GalleryGrid items={images} />
       </div>
 
       <PaginationLinks

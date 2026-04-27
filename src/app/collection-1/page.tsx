@@ -1,7 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import ProjectIntro from '../project-intro'
 import PaginationLinks from '../pagination-links'
+import GalleryGrid from '../gallery-grid'
 import illo1 from "../illustrations/illustration1.png"
 import illo2 from "../illustrations/illustration2.png"
 import illo3 from "../illustrations/illustration3.png"
@@ -39,17 +38,7 @@ export default function Collection1() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </ProjectIntro>
 
-        <div className="columns-2 md:columns-3 gap-6">
-          {images.map((image) => (
-            <Link key={image.href} href={image.href} className="block mb-6 leading-[0]">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                className="w-full hover:opacity-75 transition-opacity duration-500"
-              />
-            </Link>
-          ))}
-        </div>
+        <GalleryGrid items={images} />
       </div>
 
       <PaginationLinks
