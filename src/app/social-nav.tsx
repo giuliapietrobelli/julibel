@@ -2,7 +2,7 @@
 import Link from 'next/link'
 
 export default function SocialNav(props: any) {
-  const baseClasses = 'flex flex-row items-center justify-center gap-4 text-5xl font-light leading-loose text-zinc-900 lg:flex lg:order-3 lg:gap-7 lg:text-base'
+  const baseClasses = 'flex flex-row items-center justify-center gap-4 text-5xl font-light leading-loose text-zinc-900 lg:flex lg:gap-7 lg:text-base'
   const closeClasses = baseClasses + ' ' + 'hidden lg:visible'
 
   return (

@@ -86,7 +86,7 @@ export default function Header() {
 }
 
 function HeaderWrapper(props: any) {
-  const baseClasses = 'fixed z-50 flex w-full lg:h-auto flex-col lg:flex-row justify-between items-center px-8 md:px-18 2xl:px-[6rem] py-6 transition-all';
+  const baseClasses = 'fixed z-50 flex w-full lg:h-auto flex-col lg:flex-row items-center lg:justify-between px-8 md:px-18 2xl:px-[6rem] py-6 transition-all';
   const openClasses = 'h-screen transition-all';
   
   const classes = props.isMenuOpen 
@@ -104,7 +104,7 @@ function HeaderWrapper(props: any) {
 
 function TopRow(props: any) {
   return (
-    <div id="top-row" className="flex items-center justify-between w-full h-12 md:h-20 lg:flex-row lg:w-auto lg:order-1">
+    <div id="top-row" className="flex items-center justify-between w-full h-12 md:h-20 lg:h-auto lg:w-auto lg:absolute lg:left-1/2 lg:-translate-x-1/2">
       {props.children}
   </div>
   )
