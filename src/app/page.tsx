@@ -6,9 +6,6 @@ import Link from 'next/link'
 
 
 export default function Home() {
-  const textOverlay = 'font-medium text-3xl'
-  const portfolioOverlay = 'flex items-center justify-center absolute bg-white opacity-0 w-full h-full hover:opacity-75 hover:transition-opacity'
-
   return (
     <main className="flex flex-col items-center justify-between pb-11">
 
@@ -68,6 +65,12 @@ export default function Home() {
           href="/diesel-tribute-catalogue"
           src="/diesel_thumb.jpeg"
           alt="Diesel tribute catalogue"
+        />
+        <GalleryImage
+          title="Pattern Collection"
+          href="/collection-1"
+          src="/illustrations_thumb.jpeg"
+          alt="Pattern collection"
         />
 
       </div>

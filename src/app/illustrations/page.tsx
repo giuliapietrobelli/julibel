@@ -1,6 +1,7 @@
-
+import Image from 'next/image'
+import Link from 'next/link'
 import ProjectIntro from '../project-intro'
-import LightboxGallery from '../lightbox-gallery'
+import PaginationLinks from '../pagination-links'
 import illo1 from "./illustration1.png"
 import illo2 from "./illustration2.png"
 import illo3 from "./illustration3.png"
@@ -13,95 +14,43 @@ import illo9 from "./illustration9.png"
 import illo10 from "./illustration10.png"
 import illo11 from "./illustration11.png"
 import illo12 from "./illustration12.png"
-import PaginationLinks from '../pagination-links'
 
 const images = [
-  {
-    title: "Skater Boy",
-    src: illo1,
-    alt: "Skater Boy Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Bloom",
-    src: illo2,
-    alt: "Bloom Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Yoga",
-    src: illo3,
-    alt: "Yoga Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Lipari Postcard",
-    src: illo4,
-    alt: "Lipari postcard Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Preraphaelites",
-    src: illo5,
-    alt: "Preraphaelites Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Lotus bowl",
-    src: illo6,
-    alt: "Lotus bowl Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Pixie girl",
-    src: illo7,
-    alt: "Pixie girl Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Buttercup floral pattern",
-    src: illo8,
-    alt: "Buttercup floral pattern Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Fashion illustration",
-    src: illo9,
-    alt: "Fashion Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Deer",
-    src: illo10,
-    alt: "Deer Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Nymph Illustration",
-    src: illo11,
-    alt: "Nymph Illustration",
-    className: "max-w-full"
-  },
-  {
-    title: "Bubblegum girl",
-    src: illo12,
-    alt: "Bubblegum girl Illustration",
-    className: "max-w-full"
-  }
+  { title: "Skater Boy", src: illo1, alt: "Skater Boy Illustration", href: "/illustrations/skater-boy" },
+  { title: "Bloom", src: illo2, alt: "Bloom Illustration", href: "/illustrations/bloom" },
+  { title: "Yoga", src: illo3, alt: "Yoga Illustration", href: "/illustrations/yoga" },
+  { title: "Lipari Postcard", src: illo4, alt: "Lipari Postcard Illustration", href: "/illustrations/lipari-postcard" },
+  { title: "Preraphaelites", src: illo5, alt: "Preraphaelites Illustration", href: "/illustrations/preraphaelites" },
+  { title: "Lotus Bowl", src: illo6, alt: "Lotus Bowl Illustration", href: "/illustrations/lotus-bowl" },
+  { title: "Pixie Girl", src: illo7, alt: "Pixie Girl Illustration", href: "/illustrations/pixie-girl" },
+  { title: "Buttercup Floral Pattern", src: illo8, alt: "Buttercup Floral Pattern Illustration", href: "/illustrations/buttercup-floral-pattern" },
+  { title: "Fashion Illustration", src: illo9, alt: "Fashion Illustration", href: "/illustrations/fashion-illustration" },
+  { title: "Deer", src: illo10, alt: "Deer Illustration", href: "/illustrations/deer" },
+  { title: "Nymph", src: illo11, alt: "Nymph Illustration", href: "/illustrations/nymph" },
+  { title: "Bubblegum Girl", src: illo12, alt: "Bubblegum Girl Illustration", href: "/illustrations/bubblegum-girl" },
 ]
 
 export default function Illustrations() {
   return (
     <>
-    
-    <div className="container flex flex-col gap-10 md:gap-20 py-20">
+      <div className="container flex flex-col gap-10 md:gap-20 py-20">
 
-      <ProjectIntro title="Illustrations">
-        A selection of illustrations made with Procreate, Illustrator, and Photoshop
-      </ProjectIntro>
+        <ProjectIntro title="Illustrations">
+          A selection of illustrations made with Procreate, Illustrator, and Photoshop
+        </ProjectIntro>
 
-      <LightboxGallery columns={[2, 3]} images={images} />
-    </div>
+        <div className="columns-2 md:columns-3 gap-6">
+          {images.map((image) => (
+            <Link key={image.href} href={image.href} className="block mb-6 leading-[0]">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                className="w-full hover:opacity-75 transition-opacity duration-500"
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
 
       <PaginationLinks
         prev="Mintel Digital Advertising"
