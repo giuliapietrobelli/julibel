@@ -30,11 +30,14 @@ export default function ImageSubpage({ title, image, alt, galleryLink, prevLabel
 
   return (
     <>
-      <div className="relative h-screen overflow-hidden">
+      <div className="relative h-[60vh] overflow-hidden">
         <div ref={imgRef} className="absolute -top-[30%] -bottom-[30%] left-0 right-0">
           <Image src={image} alt={alt} fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0 bg-black/40" />
+        <Link href={galleryLink} className="absolute top-6 left-8 z-20 text-sm font-extralight text-white/70 hover:text-white hover:underline underline-offset-4">
+          ← {galleryLink.split('/').filter(Boolean).pop()?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
+        </Link>
         <div className="relative z-10 h-full flex flex-col items-center justify-center gap-8 text-white text-center px-8">
           <h1 className="font-normal text-4xl md:text-6xl">{title}</h1>
           <div className="flex gap-4">

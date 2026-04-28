@@ -1,6 +1,7 @@
 import ProjectIntro from '../project-intro'
 import PaginationLinks from '../pagination-links'
 import GalleryGrid from '../gallery-grid'
+import BackLink from '../back-link'
 import illo1 from "./illustration1.png"
 import illo2 from "./illustration2.png"
 import illo3 from "./illustration3.png"
@@ -32,6 +33,7 @@ const images = [
 export default function Illustrations() {
   return (
     <>
+      <BackLink />
       <div className="container flex flex-col gap-10 md:gap-20 py-20">
 
         <ProjectIntro title="Illustrations">
