@@ -3,11 +3,13 @@
 import { useEffect, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { Search } from 'lucide-react'
 
 type GalleryItem = {
-  src: StaticImageData
+  src: StaticImageData | string
   alt: string
-  href: string
+  href?: string
+  title?: string
 }
 
 export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
@@ -21,19 +23,27 @@ export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
 
   return (
     <div className="columns-2 md:columns-3 gap-6">
-      {items.map((image, index) => (
-        <Link
-          key={image.href}
-          href={image.href}
-          className={`block mb-6 leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            className="w-full hover:opacity-75 transition-opacity duration-500"
-          />
-        </Link>
-      ))}
+      {items.map((image, index) => {
+        const animClass = `relative mb-6 leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`
+        const overlay = image.title ? (
+          <div className="flex flex-col items-center justify-center gap-2 absolute inset-0 bg-white opacity-0 hover:opacity-75 transition-opacity duration-500 z-10">
+            <span className="font-medium text-xl lg:text-2xl leading-normal">{image.title}</span>
+            <Search size={20} strokeWidth={1.5} />
+          </div>
+        ) : null
+        const img = <Image src={image.src} alt={image.alt} width={1400} height={900} className="w-full" />
+        return image.href ? (
+          <Link key={image.href + index} href={image.href} className={`block ${animClass}`}>
+            {overlay}
+            {img}
+          </Link>
+        ) : (
+          <div key={image.alt + index} className={animClass}>
+            {overlay}
+            {img}
+          </div>
+        )
+      })}
     </div>
   )
 }
