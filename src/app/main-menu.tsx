@@ -39,7 +39,7 @@ export default function MainMenu(props: any) {
 
   return (
     <ul className={props.isMenuOpen ? baseClasses : closeClasses}>
-      <li ref={dropdownRef} className="relative lg:pb-3" onMouseEnter={() => setWorkOpen(true)} onMouseLeave={() => setWorkOpen(false)}>
+      <li ref={dropdownRef} className="relative" onMouseEnter={() => setWorkOpen(true)} onMouseLeave={() => setWorkOpen(false)}>
         <button
           onClick={() => setWorkOpen(!workOpen)}
           className={`underline-offset-8 hover:underline decoration-1 ${isWorkActive ? 'underline' : ''}`}
