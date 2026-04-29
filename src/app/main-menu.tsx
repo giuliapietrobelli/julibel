@@ -4,11 +4,11 @@ import { usePathname } from 'next/navigation'
 import { useState, useRef, useEffect } from 'react'
 
 const workItems = [
-  { title: 'Retro Country', href: '/mintel-store-redesign' },
-  { title: 'Secret Garden', href: '/comperemedia-website' },
-  { title: 'Soft Tide', href: '/mintel-digital-advertising' },
-  { title: 'Playful Cats', href: '/illustrations' },
-  { title: 'Echoes of Siam', href: '/laura-ashley-feature-page' },
+  { title: 'Collection 1', href: '/mintel-store-redesign' },
+  { title: 'Collection 2', href: '/comperemedia-website' },
+  { title: 'Collection 3', href: '/mintel-digital-advertising' },
+  { title: 'Collection 4', href: '/illustrations' },
+  { title: 'Collection 5', href: '/laura-ashley-feature-page' },
   { title: 'Collection 6', href: '/laura-ashley-newsletters' },
 ]
 
