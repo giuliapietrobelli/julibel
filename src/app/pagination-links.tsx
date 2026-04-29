@@ -16,7 +16,7 @@ export default function PaginationLinks(props: any) {
 
         <Link href={props.nextLink} className="flex items-center md:gap-4 ml-auto max-w-40 md:max-w-72 lg:max-w-xl">
           <div>
-            <h3 className="text-zinc-900 font-medium text-right text-md md:text-3xl">{props.next}</h3>
+            <h3 className="text-zinc-900 font-medium text-right text-sm md:text-lg">{props.next}</h3>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
             <path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
