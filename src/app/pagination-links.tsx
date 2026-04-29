@@ -10,7 +10,7 @@ export default function PaginationLinks(props: any) {
             d="M20 30L8 16L20 2" />
           </svg>
           <div>
-            <h3 className="text-zinc-900 font-medium text-md md:text-3xl">{props.prev}</h3>
+            <h3 className="text-zinc-900 font-medium text-sm md:text-lg">{props.prev}</h3>
           </div>
         </Link>
 

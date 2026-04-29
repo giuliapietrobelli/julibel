@@ -86,9 +86,9 @@ export default function DieselTribute() {
       </div>
 
       <PaginationLinks
-        prev="Find my bike App"
+        prev="Find My Bike"
         prevLink="./find-my-bike"
-        next="Mintel Store Redesign"
+        next="Retro Country"
         nextLink="./mintel-store-redesign"
       />
 

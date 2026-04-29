@@ -47,9 +47,9 @@ export default function LauraAshleyNewsletters() {
       </div>
 
       <PaginationLinks
-        prev="Collection 5"
+        prev="Echoes of Siam"
         prevLink="./laura-ashley-feature-page"
-        next="Find my bike App"
+        next="Find My Bike"
         nextLink="./find-my-bike"
       />
 

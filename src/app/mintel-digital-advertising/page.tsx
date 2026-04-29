@@ -33,9 +33,9 @@ export default function Collection3() {
       </div>
 
       <PaginationLinks
-        prev="Collection 2"
+        prev="Secret Garden"
         prevLink="./comperemedia-website"
-        next="Collection 4"
+        next="Playful Cats"
         nextLink="./illustrations"
       />
 

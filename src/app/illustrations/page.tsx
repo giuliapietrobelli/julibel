@@ -34,9 +34,9 @@ export default function Illustrations() {
       </div>
 
       <PaginationLinks
-        prev="Collection 3"
+        prev="Soft Tide"
         prevLink="./mintel-digital-advertising"
-        next="Collection 5"
+        next="Echoes of Siam"
         nextLink="./laura-ashley-feature-page"
       />
 

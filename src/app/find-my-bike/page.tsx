@@ -50,7 +50,7 @@ export default function FindMyBike() {
     </div>
 
     <PaginationLinks
-      prev="Laura Ashley Newsletters"
+      prev="Collection 6"
       prevLink="./laura-ashley-newsletters"
       next="Diesel Tribute Catalogue"
       nextLink="./diesel-tribute-catalogue"

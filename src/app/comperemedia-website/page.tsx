@@ -33,9 +33,9 @@ export default function Collection2() {
       </div>
 
       <PaginationLinks
-        prev="Collection 1"
+        prev="Retro Country"
         prevLink="./mintel-store-redesign"
-        next="Collection 3"
+        next="Soft Tide"
         nextLink="./mintel-digital-advertising"
       />
 

@@ -33,7 +33,7 @@ export default function Collection5() {
       </div>
 
       <PaginationLinks
-        prev="Collection 4"
+        prev="Playful Cats"
         prevLink="./illustrations"
         next="Collection 6"
         nextLink="./laura-ashley-newsletters"

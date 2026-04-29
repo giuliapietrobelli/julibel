@@ -35,7 +35,7 @@ export default function Collection1() {
       <PaginationLinks
         prev="Diesel Tribute Catalogue"
         prevLink="./diesel-tribute-catalogue"
-        next="Collection 2"
+        next="Secret Garden"
         nextLink="./comperemedia-website"
       />
 
