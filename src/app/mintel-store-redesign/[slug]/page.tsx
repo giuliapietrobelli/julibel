@@ -60,7 +60,7 @@ export default function DesignPage() {
         </Link>
 
         <div className="relative z-10 flex flex-col items-center gap-8 text-white text-center px-8 max-w-2xl py-16 md:py-20">
-          <h1 className="font-light text-3xl md:text-4xl leading-tight">{design.title}</h1>
+          <h1 className="font-medium text-3xl md:text-4xl leading-tight">{design.title}</h1>
           <p className="font-extralight text-sm md:text-base leading-loose opacity-90">
             Part of the Retro Country collection — prairie florals, vintage gingham and botanical prints in muted denim blue, mustard and natural beige.
           </p>
@@ -71,6 +71,12 @@ export default function DesignPage() {
               className="px-8 py-3 bg-white text-zinc-900 text-sm font-extralight hover:bg-transparent hover:text-white border border-white transition-colors duration-300"
             >
               Shop on Spoonflower
+            </Link>
+            <Link
+              href="/contact"
+              className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300"
+            >
+              Enquire about Licensing
             </Link>
             <Link
               href="/mintel-store-redesign"

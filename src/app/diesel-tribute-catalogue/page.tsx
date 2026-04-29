@@ -91,6 +91,16 @@ export default function DieselTribute() {
         next="Mintel Store Redesign"
         nextLink="./mintel-store-redesign"
       />
+
+      <div className="bg-zinc-100 py-20">
+        <div className="container flex flex-col items-center gap-8 text-center px-12 md:px-20 lg:px-32">
+          <p className="font-extralight text-base md:text-lg leading-loose max-w-xl text-zinc-600">Need a pattern design or illustration to put on your products that will help sell them?</p>
+          <p className="font-medium text-2xl md:text-3xl leading-snug">Let&apos;s chat!</p>
+          <Link href="/contact" className="px-8 py-3 border border-zinc-900 text-zinc-900 text-sm font-extralight hover:bg-zinc-900 hover:text-white transition-colors duration-300">
+            Enquire Now
+          </Link>
+        </div>
+      </div>
     </>
   )
 }
