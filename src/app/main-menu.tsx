@@ -19,12 +19,21 @@ export default function MainMenu(props: any) {
   const pathname = usePathname()
 
   function openDropdown() {
+    if (window.innerWidth < 1024) return
     if (closeTimeout.current) clearTimeout(closeTimeout.current)
     setWorkOpen(true)
   }
 
   function closeDropdown() {
+    if (window.innerWidth < 1024) return
     closeTimeout.current = setTimeout(() => setWorkOpen(false), 150)
+  }
+
+  function handleWorkClick(e: React.MouseEvent) {
+    if (window.innerWidth < 1024) {
+      e.preventDefault()
+      setWorkOpen(prev => !prev)
+    }
   }
 
   const isWorkActive = pathname === '/' || workItems.some(i => i.href === pathname)
@@ -52,7 +61,7 @@ export default function MainMenu(props: any) {
       <li ref={dropdownRef} className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
         <Link
           href="/"
-          onClick={handleClose}
+          onClick={handleWorkClick}
           className={`underline-offset-8 hover:underline decoration-1 ${isWorkActive ? 'underline' : ''}`}
         >
           Work
