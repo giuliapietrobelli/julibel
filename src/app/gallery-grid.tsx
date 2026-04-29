@@ -22,7 +22,7 @@ export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
   }, [visibleCount, items.length])
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 px-8 md:px-20">
       {items.map((image, index) => {
         const animClass = `relative leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`
         const overlay = image.title ? (
