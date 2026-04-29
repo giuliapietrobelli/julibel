@@ -30,7 +30,7 @@ export default function RootLayout({
         <div className="flex flex-col gap-4 justify-center bg-zinc-800 min-h-96">
           <ul className="flex text-center justify-center gap-4">
             <li>
-            <Link href="/work" className="text-zinc-300 text-xl font-medium hover:opacity-75 hover:transition-opacity">Work</Link>
+            <Link href="/" className="text-zinc-300 text-xl font-medium hover:opacity-75 hover:transition-opacity">Collections</Link>
             </li>
 
             <li>

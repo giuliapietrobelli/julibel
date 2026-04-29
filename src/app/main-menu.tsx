@@ -64,7 +64,7 @@ export default function MainMenu(props: any) {
           onClick={handleWorkClick}
           className={`underline-offset-8 hover:underline decoration-1 ${isWorkActive ? 'underline' : ''}`}
         >
-          Work
+          Collections
         </Link>
         {workOpen && (
           <ul className="flex flex-col items-center lg:items-start gap-3 lg:gap-0 mt-2 lg:absolute lg:top-full lg:-left-4 lg:mt-1 lg:bg-white lg:border lg:border-zinc-200 lg:shadow-md lg:py-1 lg:min-w-max text-left">
