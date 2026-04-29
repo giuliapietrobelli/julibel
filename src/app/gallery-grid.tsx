@@ -22,9 +22,9 @@ export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
   }, [visibleCount, items.length])
 
   return (
-    <div className="columns-2 md:columns-3 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
       {items.map((image, index) => {
-        const animClass = `relative mb-6 leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`
+        const animClass = `relative leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`
         const overlay = image.title ? (
           <div className="flex flex-col items-center justify-center gap-2 absolute inset-0 bg-white opacity-0 hover:opacity-75 transition-opacity duration-500 z-10">
             <span className="font-light text-xs lg:text-sm text-center leading-snug px-4">{image.title}</span>

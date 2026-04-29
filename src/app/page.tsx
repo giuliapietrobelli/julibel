@@ -31,12 +31,12 @@ export default function Home() {
       </div>
 
       <div className="w-full px-8 md:px-16 pb-11">
-        <div className="columns-2 md:columns-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {galleryItems.map((item, index) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`relative block mb-6 leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
+              className={`relative block leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
             >
               <div className="flex items-center justify-center absolute inset-0 bg-white opacity-0 hover:opacity-75 transition-opacity duration-500 z-10">
                 <span className="font-medium text-xl lg:text-2xl leading-normal">{item.title}</span>
