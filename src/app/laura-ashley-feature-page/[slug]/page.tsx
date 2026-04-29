@@ -34,7 +34,7 @@ export default function DesignPage() {
 
   return (
     <>
-      <div className="relative h-[70vh] overflow-hidden flex items-center justify-center">
+      <div className="relative min-h-[70vh] overflow-hidden flex items-center justify-center -mt-24 md:-mt-32 pt-24 md:pt-32">
         <div
           ref={gridRef}
           className="absolute"
@@ -55,9 +55,13 @@ export default function DesignPage() {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 flex flex-col items-center gap-8 text-white text-center px-8 max-w-2xl">
-          <h1 className="font-normal text-3xl md:text-5xl leading-snug">{design.title}</h1>
-          <p className="font-extralight text-base md:text-lg leading-relaxed opacity-90">
+        <Link href="/laura-ashley-feature-page" className="absolute z-20 left-8 top-36 md:top-44 lg:top-28 text-sm font-extralight text-white/80 hover:text-white transition-colors">
+          ← Collections
+        </Link>
+
+        <div className="relative z-10 flex flex-col items-center gap-8 text-white text-center px-8 max-w-2xl py-16 md:py-20">
+          <h1 className="font-light text-3xl md:text-4xl leading-tight">{design.title}</h1>
+          <p className="font-extralight text-sm md:text-base leading-loose opacity-90">
             Part of the Echoes of Siam collection — tropical toiles, botanical prints and ornamental motifs inspired by Southeast Asian landscapes.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

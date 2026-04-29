@@ -86,7 +86,7 @@ export default function Header() {
 }
 
 function HeaderWrapper(props: any) {
-  const baseClasses = 'fixed z-50 flex w-full lg:h-auto flex-col lg:flex-row items-center lg:justify-between px-8 md:px-18 2xl:px-[6rem] py-10 transition-all';
+  const baseClasses = 'fixed z-50 flex w-full lg:h-auto flex-col lg:flex-row items-center lg:justify-between px-8 md:px-18 2xl:px-[6rem] py-6 transition-all';
   const openClasses = 'h-screen transition-all';
   
   const classes = props.isMenuOpen 
