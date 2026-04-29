@@ -26,7 +26,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between pb-11">
 
       <div className="flex flex-col flex-wrap min-h-52 slide">
-        <h1 className="max-w-sm md:max-w-md lg:max-w-xl m-auto text-center sm:py-14 lg:pt-20 lg:pb-28 px-8 text-2xl sm:text-3xl lg:text-4xl leading-snug md:leading-normal lg:leading-snug font-normal text-zinc-900">
+        <h1 className="max-w-sm md:max-w-md lg:max-w-xl m-auto text-center sm:pt-6 sm:pb-14 lg:pt-10 lg:pb-28 px-8 text-2xl sm:text-3xl lg:text-4xl leading-snug md:leading-normal lg:leading-snug font-normal text-zinc-900">
           Ciao! I&apos;m Giulia, a <b>digital designer</b> based in Italy.
         </h1>
       </div>

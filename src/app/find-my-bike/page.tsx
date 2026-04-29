@@ -35,7 +35,7 @@ const images = [
 export default function FindMyBike() {
   return (
     <>
-    <div className="container flex flex-col gap-10 md:gap-20 py-20">
+    <div className="container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
 
       <ProjectIntro title="Find my bike app">
         Findmybike is a personal project, a mobile app designed to help users compare different types of bikes, making it easier to find the perfect match.
