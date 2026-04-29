@@ -34,7 +34,7 @@ export default function LauraAshleyNewsletters() {
   return (
     <>
       <BackLink />
-      <div className="container flex flex-col gap-10 md:gap-20 pb-20">
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pb-20">
         <div className="flex flex-col items-center gap-8 text-center max-w-xl md:max-w-2xl self-center pb-6">
           <h2 className="font-medium text-3xl md:text-4xl leading-tight">Collection 6</h2>
           <p className="font-extralight text-sm md:text-base leading-loose text-zinc-600">As Email Designer at Laura Ashley, I was in charge of creating engaging and meaningful content to promote the brand and its products. Working closely with the copywriter and digital marketing coordinator, the aim was to create work that is both aesthetically pleasing and functional.</p>

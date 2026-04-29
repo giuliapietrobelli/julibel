@@ -59,7 +59,7 @@ export default function DesignPage() {
           ← Collections
         </Link>
 
-        <div className="relative z-10 flex flex-col items-center gap-8 text-white text-center px-8 max-w-2xl py-16 md:py-20">
+        <div className="animate-fade-up relative z-10 flex flex-col items-center gap-8 text-white text-center px-8 max-w-2xl py-16 md:py-20">
           <h1 className="font-medium text-3xl md:text-4xl leading-tight">{design.title}</h1>
           <p className="font-extralight text-sm md:text-base leading-loose opacity-90">
             Part of the Echoes of Siam collection — tropical toiles, botanical prints and ornamental motifs inspired by Southeast Asian landscapes.
@@ -78,17 +78,11 @@ export default function DesignPage() {
             >
               Enquire about Licensing
             </Link>
-            <Link
-              href="/laura-ashley-feature-page"
-              className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300"
-            >
-              View Collection
-            </Link>
           </div>
         </div>
       </div>
 
-      <div className="container py-16 flex justify-center">
+      <div className="animate-fade-up-delay container py-16 flex justify-center">
         <div className="w-full max-w-2xl">
           <Image src={design.src} alt={design.alt} width={1400} height={1400} className="w-full" />
         </div>

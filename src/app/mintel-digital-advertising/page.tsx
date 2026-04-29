@@ -15,7 +15,7 @@ export default function Collection3() {
   return (
     <>
       <BackLink />
-      <div className="container flex flex-col gap-10 md:gap-20 pb-20">
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pb-20">
         <div className="flex flex-col items-center gap-8 text-center max-w-xl md:max-w-2xl self-center pb-6">
           <h2 className="font-medium text-3xl md:text-4xl leading-tight">Soft Tide</h2>
           <p className="font-extralight text-sm md:text-base leading-loose text-zinc-600">A calm coastal fabric collection featuring organic shapes, hand-drawn waves and shell motifs in muted blues, sandy neutrals and soft textures inspired by the sea.</p>

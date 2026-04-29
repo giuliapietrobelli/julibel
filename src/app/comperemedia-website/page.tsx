@@ -15,7 +15,7 @@ export default function Collection2() {
   return (
     <>
       <BackLink />
-      <div className="container flex flex-col gap-10 md:gap-20 pb-20">
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pb-20">
         <div className="flex flex-col items-center gap-8 text-center max-w-xl md:max-w-2xl self-center pb-6">
           <h2 className="font-medium text-3xl md:text-4xl leading-tight">Secret Garden</h2>
           <p className="font-extralight text-sm md:text-base leading-loose text-zinc-600">A fabric collection of enchanted botanicals, cottagecore florals and romantic garden prints in rich jewel tones, deep greens and soft naturals.</p>

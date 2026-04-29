@@ -71,7 +71,7 @@ const images = [
 export default function DieselTribute() {
   return (
     <>
-      <div className="container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
 
         <ProjectIntro title="Diesel tribute catalogue">
           Design of the Diesel Tribute catalog, a lookbook showcasing the capsule collection by Nicola Formichetti.

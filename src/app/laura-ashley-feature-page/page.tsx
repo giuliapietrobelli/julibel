@@ -15,7 +15,7 @@ export default function Collection5() {
   return (
     <>
       <BackLink />
-      <div className="container flex flex-col gap-10 md:gap-20 pb-20">
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pb-20">
         <div className="flex flex-col items-center gap-8 text-center max-w-xl md:max-w-2xl self-center pb-6">
           <h2 className="font-medium text-3xl md:text-4xl leading-tight">Echoes of Siam</h2>
           <p className="font-extralight text-sm md:text-base leading-loose text-zinc-600">A fabric collection of tropical toiles, botanical prints and ornamental motifs inspired by the lush landscapes and rich visual culture of Southeast Asia.</p>

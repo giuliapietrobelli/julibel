@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between pb-11">
 
-      <div className="flex flex-col flex-wrap min-h-52 slide">
+      <div className="animate-fade-up flex flex-col flex-wrap min-h-52 slide">
         <h1 className="m-auto text-center sm:pt-6 sm:pb-14 lg:pt-10 lg:pb-28 px-8 text-xl sm:text-2xl lg:text-3xl font-light text-zinc-900" style={{ lineHeight: '2.50rem', maxWidth: '41rem' }}>
           Crafting pattern designs and illustrations perfect for modern fabric, wallpaper and home decor
         </h1>
