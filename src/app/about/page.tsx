@@ -25,7 +25,7 @@ export default function About() {
       </div>
 
       <div className="lg:w-1/2 text-center">
-        <Image className="max-w-full rounded-full m-auto" src="/profilepic.png" alt="profile picture" width={480} height={480} priority/>
+        <Image className="max-w-sm w-full m-auto" src="/julibel-profile.jpg" alt="profile picture" width={1152} height={2048} priority/>
         <button className="self-start py-7 px-10 text-xl bg-zinc-700 hover:bg-zinc-600 transition-all border-0 text-white m-16">
           <Link href="/cv_giulia_pietrobelli_24.pdf" target="_blank">Download my CV</Link>
         </button>
