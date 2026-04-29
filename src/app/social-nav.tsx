@@ -3,12 +3,13 @@ import Link from 'next/link'
 
 export default function SocialNav(props: any) {
   const baseClasses = 'flex flex-row items-center justify-center gap-4 text-5xl font-light leading-loose text-zinc-900 lg:flex lg:gap-7 lg:text-base'
-  const closeClasses = baseClasses + ' ' + 'hidden lg:visible'
+  const openClasses = baseClasses + ' mt-auto pb-8'
+  const closeClasses = baseClasses + ' hidden lg:visible'
 
   return (
     <ul
     className={props.isMenuOpen
-     ? baseClasses
+     ? openClasses
      : closeClasses
     }>
       <li className="flex items-center gap-2">
