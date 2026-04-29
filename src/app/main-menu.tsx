@@ -15,7 +15,17 @@ const workItems = [
 export default function MainMenu(props: any) {
   const [workOpen, setWorkOpen] = useState(false)
   const dropdownRef = useRef<HTMLLIElement>(null)
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
   const pathname = usePathname()
+
+  function openDropdown() {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    setWorkOpen(true)
+  }
+
+  function closeDropdown() {
+    closeTimeout.current = setTimeout(() => setWorkOpen(false), 150)
+  }
 
   const isWorkActive = pathname === '/' || workItems.some(i => i.href === pathname)
 
@@ -39,7 +49,7 @@ export default function MainMenu(props: any) {
 
   return (
     <ul className={props.isMenuOpen ? baseClasses : closeClasses}>
-      <li ref={dropdownRef} className="relative" onMouseEnter={() => setWorkOpen(true)} onMouseLeave={() => setWorkOpen(false)}>
+      <li ref={dropdownRef} className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
         <Link
           href="/"
           onClick={handleClose}
