@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import LightboxGallery from '../lightbox-gallery'
-import ProjectIntro from '../project-intro'
+import ParallaxHero from '../parallax-hero'
 import diesel1 from "./diesel_1.png"
 import diesel2 from "./diesel_2.png"
 import diesel3 from "./diesel_3.png"
@@ -15,73 +15,31 @@ import diesel10 from "./diesel_10.png"
 import PaginationLinks from '../pagination-links'
 
 const images = [
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel1,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel2,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel3,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel4,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel5,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel6,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel7,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel8,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel9,
-    alt: "Diesel tribute catalogue"
-  },
-  {
-    title: "Diesel tribute catalogue",
-    src: diesel10,
-    alt: "Diesel tribute catalogue"
-  },
-
+  { title: "Diesel tribute catalogue", src: diesel1, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel2, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel3, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel4, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel5, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel6, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel7, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel8, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel9, alt: "Diesel tribute catalogue" },
+  { title: "Diesel tribute catalogue", src: diesel10, alt: "Diesel tribute catalogue" },
 ]
 
 export default function DieselTribute() {
   return (
     <>
-      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
+      <ParallaxHero
+        title="Diesel tribute catalogue"
+        description="Design of the Diesel Tribute catalog, a lookbook showcasing the capsule collection by Nicola Formichetti. This project was created during my time at Diesel as part of the Shopping Experience team."
+        image="/diesel_hero.jpeg"
+      />
 
-        <ProjectIntro title="Diesel tribute catalogue">
-          Design of the Diesel Tribute catalog, a lookbook showcasing the capsule collection by Nicola Formichetti.
-          This project was created during my time at Diesel as part of the Shopping Experience team.
-        </ProjectIntro>
-
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
         <div className="self-center md:max-w-[70%]">
           <Image id="preview-pic" className="self-center" src="/diesel_hero.jpeg" alt="Diesel tribute catalogue cover" width={1250} height={840} priority/>
         </div>
-        
         <LightboxGallery columns={[1, 2]} images={images} />
       </div>
 

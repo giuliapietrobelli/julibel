@@ -1,6 +1,6 @@
-import ProjectIntro from '../project-intro'
 import PaginationLinks from '../pagination-links'
 import GalleryGrid from '../gallery-grid'
+import ParallaxHero from '../parallax-hero'
 import illo1 from "../illustrations/illustration1.png"
 import illo2 from "../illustrations/illustration2.png"
 import illo3 from "../illustrations/illustration3.png"
@@ -32,12 +32,13 @@ const images = [
 export default function Collection1() {
   return (
     <>
-      <div className="container flex flex-col gap-10 md:gap-20 py-20">
+      <ParallaxHero
+        title="Pattern Collection"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        image={illo1}
+      />
 
-        <ProjectIntro title="Pattern Collection">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </ProjectIntro>
-
+      <div className="container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
         <GalleryGrid items={images} />
       </div>
 

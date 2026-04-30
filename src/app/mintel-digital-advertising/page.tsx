@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import PaginationLinks from '../pagination-links'
 import GalleryGrid from '../gallery-grid'
-import BackLink from '../back-link'
+import ParallaxHero from '../parallax-hero'
 import { designs } from './designs'
 
 const images = designs.map((d) => ({
@@ -14,21 +14,20 @@ const images = designs.map((d) => ({
 export default function Collection3() {
   return (
     <>
-      <BackLink />
-      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pb-20">
-        <div className="flex flex-col items-center gap-8 text-center max-w-xl md:max-w-2xl self-center pb-6">
-          <h2 className="font-medium text-3xl md:text-4xl leading-tight">Soft Tide</h2>
-          <p className="font-extralight text-sm md:text-base leading-loose text-zinc-600">A calm coastal fabric collection featuring organic shapes, hand-drawn waves and shell motifs in muted blues, sandy neutrals and soft textures inspired by the sea.</p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="https://www.spoonflower.com/collections/1483469-soft-tide-by-julibel_studio" target="_blank" className="px-8 py-3 border border-zinc-900 text-zinc-900 text-sm font-extralight hover:bg-zinc-900 hover:text-white transition-colors duration-300">
-              Shop on Spoonflower
-            </Link>
-            <Link href="/contact" className="px-8 py-3 border border-zinc-900 text-zinc-900 text-sm font-extralight hover:bg-zinc-900 hover:text-white transition-colors duration-300">
-              Enquire about Licensing
-            </Link>
-          </div>
-        </div>
+      <ParallaxHero
+        title="Soft Tide"
+        description="A calm coastal fabric collection featuring organic shapes, hand-drawn waves and shell motifs in muted blues, sandy neutrals and soft textures inspired by the sea."
+        image={designs[0].src}
+      >
+        <Link href="https://www.spoonflower.com/collections/1483469-soft-tide-by-julibel_studio" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
+          Shop on Spoonflower
+        </Link>
+        <Link href="/contact" className="px-8 py-3 bg-white text-zinc-900 text-sm font-extralight hover:bg-transparent hover:text-white border border-white transition-colors duration-300">
+          Enquire about Licensing
+        </Link>
+      </ParallaxHero>
 
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
         <GalleryGrid items={images} />
       </div>
 
