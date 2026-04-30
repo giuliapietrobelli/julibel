@@ -28,7 +28,10 @@ export default function Collection2() {
       </ParallaxHero>
 
       <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
-        <GalleryGrid items={images} />
+        <GalleryGrid items={images} lightboxCtas={[
+          { label: "Shop on Spoonflower", href: "https://www.spoonflower.com/collections/938595-secret-garden-by-julibel_studio", external: true },
+          { label: "Enquire about Licensing", href: "/contact" },
+        ]} />
       </div>
 
       <PaginationLinks

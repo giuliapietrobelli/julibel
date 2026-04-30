@@ -39,7 +39,10 @@ export default function Collection1() {
       />
 
       <div className="container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
-        <GalleryGrid items={images} />
+        <GalleryGrid items={images} lightboxCtas={[
+          { label: "Enquire about Licensing", href: "/contact" },
+          { label: "Get in touch", href: "/contact" },
+        ]} />
       </div>
 
       <PaginationLinks
