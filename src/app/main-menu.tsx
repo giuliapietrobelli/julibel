@@ -4,12 +4,11 @@ import { usePathname } from 'next/navigation'
 import { useState, useRef, useEffect } from 'react'
 
 const workItems = [
-  { title: 'Retro Country', href: '/mintel-store-redesign' },
-  { title: 'Secret Garden', href: '/comperemedia-website' },
-  { title: 'Soft Tide', href: '/mintel-digital-advertising' },
-  { title: 'Playful Cats', href: '/illustrations' },
-  { title: 'Echoes of Siam', href: '/laura-ashley-feature-page' },
-  { title: 'Collection 6', href: '/laura-ashley-newsletters' },
+  { title: 'Retro Country', href: '/retro-country' },
+  { title: 'Secret Garden', href: '/secret-garden' },
+  { title: 'Soft Tide', href: '/soft-tide' },
+  { title: 'Playful Cats', href: '/playful-cats' },
+  { title: 'Echoes of Siam', href: '/echoes-of-siam' },
 ]
 
 export default function MainMenu(props: any) {

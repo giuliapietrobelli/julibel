@@ -2,15 +2,13 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
-import illo1 from './illustrations/illustration1.png'
 
 const galleryItems = [
-  { title: 'Retro Country', href: '/mintel-store-redesign', src: '/collection-retro-country.png', alt: 'Retro Country' },
-  { title: 'Secret Garden', href: '/comperemedia-website', src: '/collection-enchanted-woodland.png', alt: 'Secret Garden' },
-  { title: 'Soft Tide', href: '/mintel-digital-advertising', src: '/collection-beachy-boho.png', alt: 'Soft Tide' },
-  { title: 'Playful Cats', href: '/illustrations', src: '/collection-playful-cats.png', alt: 'Playful Cats' },
-  { title: 'Echoes of Siam', href: '/laura-ashley-feature-page', src: '/collection-echoes-siam.png', alt: 'Echoes of Siam' },
-  { title: 'Collection 6', href: '/laura-ashley-newsletters', src: illo1, alt: 'Collection 6' },
+  { title: 'Retro Country', href: '/retro-country', src: '/collection-retro-country.png', alt: 'Retro Country' },
+  { title: 'Secret Garden', href: '/secret-garden', src: '/collection-enchanted-woodland.png', alt: 'Secret Garden' },
+  { title: 'Soft Tide', href: '/soft-tide', src: '/collection-beachy-boho.png', alt: 'Soft Tide' },
+  { title: 'Playful Cats', href: '/playful-cats', src: '/collection-playful-cats.png', alt: 'Playful Cats' },
+  { title: 'Echoes of Siam', href: '/echoes-of-siam', src: '/collection-echoes-siam.png', alt: 'Echoes of Siam' },
 ]
 
 export default function Home() {
