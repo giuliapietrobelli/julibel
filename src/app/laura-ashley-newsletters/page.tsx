@@ -36,7 +36,8 @@ export default function LauraAshleyNewsletters() {
       <ParallaxHero
         title="Collection 6"
         description="As Email Designer at Laura Ashley, I was in charge of creating engaging and meaningful content to promote the brand and its products. Working closely with the copywriter and digital marketing coordinator, the aim was to create work that is both aesthetically pleasing and functional."
-        image={illo1}
+        image="/collection-hero-collection-6.png"
+        noSave
       >
         <Link href="/contact" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
           Enquire about Licensing

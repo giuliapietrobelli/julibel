@@ -33,7 +33,8 @@ export default function DieselTribute() {
       <ParallaxHero
         title="Diesel tribute catalogue"
         description="Design of the Diesel Tribute catalog, a lookbook showcasing the capsule collection by Nicola Formichetti. This project was created during my time at Diesel as part of the Shopping Experience team."
-        image="/diesel_hero.jpeg"
+        image="/collection-hero-diesel.png"
+        noSave
       />
 
       <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">

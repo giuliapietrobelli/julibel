@@ -17,7 +17,8 @@ export default function Collection1() {
       <ParallaxHero
         title="Retro Country"
         description="A fabric collection featuring prairie florals, vintage gingham, and delicate botanical prints in a warm, muted palette of denim blue, mustard, and natural beige."
-        image={designs[0].src}
+        image="/collection-hero-retro-country.png"
+        noSave
       >
         <Link href="https://www.spoonflower.com/collections/1453699-retro-country-by-julibel_studio" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
           Shop on Spoonflower

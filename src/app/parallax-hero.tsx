@@ -9,14 +9,16 @@ type Props = {
   description?: string
   image: StaticImageData | string
   children?: ReactNode
+  noSave?: boolean
 }
 
 const TILE = 360
 const COLS = 7
 const ROWS = 6
 
-export default function ParallaxHero({ title, description, image, children }: Props) {
+export default function ParallaxHero({ title, description, image, children, noSave }: Props) {
   const gridRef = useRef<HTMLDivElement>(null)
+  const tileRef = useRef<HTMLDivElement>(null)
   const src = typeof image === 'string' ? image : image.src
 
   useEffect(() => {
@@ -28,24 +30,41 @@ export default function ParallaxHero({ title, description, image, children }: Pr
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Inject background URL via JS so it never appears in static HTML source
+  useEffect(() => {
+    if (!noSave || !tileRef.current) return
+    tileRef.current.style.backgroundImage = `url(${src})`
+  }, [noSave, src])
+
   return (
     <div className="relative overflow-hidden -mt-24 md:-mt-32">
       <div
         ref={gridRef}
         className="absolute"
-        style={{
-          top: `-${TILE}px`,
-          left: 0,
-          right: 0,
-          display: 'grid',
-          gridTemplateColumns: `repeat(${COLS}, ${TILE}px)`,
-          gridAutoRows: `${TILE}px`,
-        }}
+        style={{ top: noSave ? '-100px' : `-${TILE}px`, left: 0, right: 0, height: noSave ? '800px' : `${ROWS * TILE}px` }}
+        onContextMenu={noSave ? (e) => e.preventDefault() : undefined}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        {Array.from({ length: COLS * ROWS }).map((_, i) => (
-          <img key={i} src={src} alt="" width={TILE} height={TILE} style={{ objectFit: 'cover', display: 'block' }} />
-        ))}
+        {noSave
+          ? (
+              <div
+                ref={tileRef}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center top',
+                  backgroundRepeat: 'no-repeat',
+                  userSelect: 'none',
+                }}
+              />
+            )
+          : /* eslint-disable-next-line @next/next/no-img-element */
+            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${COLS}, ${TILE}px)`, gridAutoRows: `${TILE}px` }}>
+              {Array.from({ length: COLS * ROWS }).map((_, i) => (
+                <img key={i} src={src} alt="" width={TILE} height={TILE} style={{ objectFit: 'cover', display: 'block' }} />
+              ))}
+            </div>
+        }
       </div>
 
       <div className="absolute inset-0 bg-black/40" />

@@ -21,7 +21,8 @@ export default function FindMyBike() {
       <ParallaxHero
         title="Find my bike app"
         description="Findmybike is a personal project, a mobile app designed to help users compare different types of bikes, making it easier to find the perfect match. I was responsible for all visual aspects of the project, including branding identity, illustrations, UX, and UI design."
-        image="/fmb-thumb.gif"
+        image="/collection-hero-find-my-bike.png"
+        noSave
       />
 
       <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">

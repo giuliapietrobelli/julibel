@@ -35,7 +35,8 @@ export default function Collection1() {
       <ParallaxHero
         title="Pattern Collection"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        image={illo1}
+        image="/collection-hero-collection-1.png"
+        noSave
       />
 
       <div className="container flex flex-col gap-10 md:gap-20 pt-16 pb-20">

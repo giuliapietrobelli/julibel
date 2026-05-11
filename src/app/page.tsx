@@ -5,11 +5,11 @@ import Link from 'next/link'
 import illo1 from './illustrations/illustration1.png'
 
 const galleryItems = [
-  { title: 'Retro Country', href: '/mintel-store-redesign', src: 'https://img.spoonflower.com/c/21315760/p/f/m/Y62oy2kbODuHWc6H6tU0x51f-6_va0iNsvay21zhPE4DeHgWSu14/(m)_Soft_Prairie_Garden_Warm_Natural_Beige.jpg', alt: 'Retro Country' },
-  { title: 'Secret Garden', href: '/comperemedia-website', src: 'https://img.spoonflower.com/c/20365279/p/f/m/7wvgdDEcmrnd1POk1hpEut16RLwNADjNP00xh38JQKNyqtgJfkQ3W-M/Enchanted_Woodland_Secret_Garden_Tapestry_Blue.jpg', alt: 'Secret Garden' },
-  { title: 'Soft Tide', href: '/mintel-digital-advertising', src: 'https://img.spoonflower.com/c/21813165/p/f/m/dShUox4r0S8epRzDZ5TNVnggFu_-yYspdQTwQznARLpwPsgIXTXv/Beachy_Boho_Calm_Coastal_blue.jpg', alt: 'Soft Tide' },
-  { title: 'Playful Cats', href: '/illustrations', src: 'https://img.spoonflower.com/c/19277600/p/f/m/4NfhRhw6_8aHnJ6n0hKpmXiVDSIVKXw00qP4P8mz57eo5-wTStwy/Playful_Cats_Soft_Pastels.jpg', alt: 'Playful Cats' },
-  { title: 'Echoes of Siam', href: '/laura-ashley-feature-page', src: 'https://img.spoonflower.com/c/19552492/p/f/m/vC2DIi1eATHRnb90yLV1QKnsS-qezG6F8bgP46pp0UTNZKHuMjoD/Siam_Garden_Toile_on_Calming_Blue.jpg', alt: 'Echoes of Siam' },
+  { title: 'Retro Country', href: '/mintel-store-redesign', src: '/collection-retro-country.png', alt: 'Retro Country' },
+  { title: 'Secret Garden', href: '/comperemedia-website', src: '/collection-enchanted-woodland.png', alt: 'Secret Garden' },
+  { title: 'Soft Tide', href: '/mintel-digital-advertising', src: '/collection-beachy-boho.png', alt: 'Soft Tide' },
+  { title: 'Playful Cats', href: '/illustrations', src: '/collection-playful-cats.png', alt: 'Playful Cats' },
+  { title: 'Echoes of Siam', href: '/laura-ashley-feature-page', src: '/collection-echoes-siam.png', alt: 'Echoes of Siam' },
   { title: 'Collection 6', href: '/laura-ashley-newsletters', src: illo1, alt: 'Collection 6' },
 ]
 

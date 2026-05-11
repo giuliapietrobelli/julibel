@@ -17,7 +17,8 @@ export default function Illustrations() {
       <ParallaxHero
         title="Playful Cats"
         description="A fabric collection of fun, whimsical cat-themed patterns and prints in cheerful pastels and playful colour palettes."
-        image={designs[0].src}
+        image="/collection-hero-playful-cats.png"
+        noSave
       >
         <Link href="https://www.spoonflower.com/collections/1357811-playful-cats-by-julibel" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
           Shop on Spoonflower

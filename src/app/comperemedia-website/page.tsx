@@ -17,7 +17,8 @@ export default function Collection2() {
       <ParallaxHero
         title="Secret Garden"
         description="A fabric collection of enchanted botanicals, cottagecore florals and romantic garden prints in rich jewel tones, deep greens and soft naturals."
-        image={designs[0].src}
+        image="/collection-hero-secret-garden.png"
+        noSave
       >
         <Link href="https://www.spoonflower.com/collections/938595-secret-garden-by-julibel_studio" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
           Shop on Spoonflower
