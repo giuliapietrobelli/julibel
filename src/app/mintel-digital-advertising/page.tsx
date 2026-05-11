@@ -17,7 +17,7 @@ export default function Collection3() {
       <ParallaxHero
         title="Soft Tide"
         description="A calm coastal fabric collection featuring organic shapes, hand-drawn waves and shell motifs in muted blues, sandy neutrals and soft textures inspired by the sea."
-        image="/collection-hero-soft-tide.png"
+        image="/collection-hero-beachy-boho-2560x700.png"
         noSave
       >
         <Link href="https://www.spoonflower.com/collections/1483469-soft-tide-by-julibel_studio" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">

@@ -17,7 +17,7 @@ export default function Collection5() {
       <ParallaxHero
         title="Echoes of Siam"
         description="A fabric collection of tropical toiles, botanical prints and ornamental motifs inspired by the lush landscapes and rich visual culture of Southeast Asia."
-        image="/collection-hero-echoes-siam.png"
+        image="/collection-hero-echoes-siam-2560x700.png"
         noSave
       >
         <Link href="https://www.spoonflower.com/collections/1360307-echoes-siam-by-julibel" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
