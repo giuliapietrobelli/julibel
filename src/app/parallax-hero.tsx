@@ -70,10 +70,12 @@ export default function ParallaxHero({ title, description, image, children, noSa
 
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 flex flex-col px-8 pt-24 md:pt-32">
-        <Link href="/" className="mt-4 text-xs font-light tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors duration-300">
-          ← All collections
-        </Link>
+      <div className="relative z-10 flex flex-col pt-24 md:pt-32">
+        <div className="max-w-[1440px] mx-auto w-full px-8 md:px-12 xl:px-16">
+          <Link href="/" className="mt-8 inline-block text-xs font-light tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors duration-300">
+            ← All collections
+          </Link>
+        </div>
 
         <div className="flex flex-col items-center gap-5 text-white text-center max-w-3xl mx-auto pt-16 pb-24">
           <h1 className="text-4xl md:text-5xl lg:text-6xl" style={{ lineHeight: 1.1, letterSpacing: '0.02em' }}>{title}</h1>
