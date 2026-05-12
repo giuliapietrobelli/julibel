@@ -16,16 +16,16 @@ const images = designs.map((d) => ({
   href: toShopUrl(d.src),
 }))
 
-export default function Collection1() {
+export default function DreamyJungleNursery() {
   return (
     <>
       <ParallaxHero
-        title="Retro Country"
-        description="A fabric collection featuring prairie florals, vintage gingham, and delicate botanical prints in a warm, muted palette of denim blue, mustard, and natural beige."
-        image="/collection-hero-retro-country.png"
+        title="Dreamy Jungle Nursery"
+        description="A soft and timeless jungle nursery collection with sleepy safari animals, tropical foliage and soothing earthy tones for calm baby spaces."
+        image="/collection-hero-sleepy-jungle-2560x700.png"
         noSave
       >
-        <Link href="https://www.spoonflower.com/collections/1453699-retro-country-by-julibel_studio" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
+        <Link href="https://www.spoonflower.com/collections/1493529-dreamy-jungle-nursery-by-julibel_studio" target="_blank" className="px-8 py-3 border border-white text-white text-sm font-extralight hover:bg-white hover:text-zinc-900 transition-colors duration-300">
           Shop on Spoonflower
         </Link>
         <Link href="/contact" className="px-8 py-3 bg-white text-zinc-900 text-sm font-extralight hover:bg-transparent hover:text-white border border-white transition-colors duration-300">
@@ -38,10 +38,10 @@ export default function Collection1() {
       </div>
 
       <PaginationLinks
-        prev="Soft Tide"
-        prevLink="./soft-tide"
-        next="Secret Garden"
-        nextLink="./secret-garden"
+        prev="Secret Garden"
+        prevLink="./secret-garden"
+        next="Playful Cats"
+        nextLink="./playful-cats"
       />
 
       <div className="bg-zinc-100 py-20">

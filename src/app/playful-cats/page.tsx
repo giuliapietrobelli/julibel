@@ -38,8 +38,8 @@ export default function Illustrations() {
       </div>
 
       <PaginationLinks
-        prev="Soft Tide"
-        prevLink="./soft-tide"
+        prev="Dreamy Jungle Nursery"
+        prevLink="./dreamy-jungle-nursery"
         next="Echoes of Siam"
         nextLink="./echoes-of-siam"
       />

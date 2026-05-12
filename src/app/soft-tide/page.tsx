@@ -38,10 +38,10 @@ export default function Collection3() {
       </div>
 
       <PaginationLinks
-        prev="Secret Garden"
-        prevLink="./secret-garden"
-        next="Playful Cats"
-        nextLink="./playful-cats"
+        prev="Echoes of Siam"
+        prevLink="./echoes-of-siam"
+        next="Retro Country"
+        nextLink="./retro-country"
       />
 
       <div className="bg-zinc-100 py-20">

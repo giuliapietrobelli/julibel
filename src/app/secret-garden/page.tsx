@@ -40,8 +40,8 @@ export default function Collection2() {
       <PaginationLinks
         prev="Retro Country"
         prevLink="./retro-country"
-        next="Soft Tide"
-        nextLink="./soft-tide"
+        next="Dreamy Jungle Nursery"
+        nextLink="./dreamy-jungle-nursery"
       />
 
       <div className="bg-zinc-100 py-20">

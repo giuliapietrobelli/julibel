@@ -6,9 +6,10 @@ import Link from 'next/link'
 const galleryItems = [
   { title: 'Retro Country', href: '/retro-country', src: '/collection-retro-country.png', alt: 'Retro Country' },
   { title: 'Secret Garden', href: '/secret-garden', src: '/collection-enchanted-woodland.png', alt: 'Secret Garden' },
-  { title: 'Soft Tide', href: '/soft-tide', src: '/collection-beachy-boho.png', alt: 'Soft Tide' },
+  { title: 'Dreamy Jungle Nursery', href: '/dreamy-jungle-nursery', src: '/collection-sleepy-jungle.png', alt: 'Dreamy Jungle Nursery' },
   { title: 'Playful Cats', href: '/playful-cats', src: '/collection-playful-cats.png', alt: 'Playful Cats' },
   { title: 'Echoes of Siam', href: '/echoes-of-siam', src: '/collection-echoes-siam.png', alt: 'Echoes of Siam' },
+  { title: 'Soft Tide', href: '/soft-tide', src: '/collection-beachy-boho.png', alt: 'Soft Tide' },
 ]
 
 export default function Home() {
