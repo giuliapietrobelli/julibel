@@ -11,7 +11,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) setMenuOpen(false)
+      if (window.innerWidth >= 768) setMenuOpen(false)
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
@@ -24,7 +24,7 @@ export default function Header() {
       <div className="max-w-[1440px] mx-auto px-8 md:px-12 xl:px-16">
 
       {/* ── MAIN ROW ── */}
-      <div className="flex items-center h-24 lg:h-32">
+      <div className="flex items-center h-24 md:h-32">
 
         {/*
           LEFT slot
@@ -32,10 +32,10 @@ export default function Header() {
           Desktop: nav links (logo hidden here, rendered absolutely below)
         */}
         <div className="flex-1 flex items-center">
-          <Link href="/" className="lg:hidden" onClick={closeMenu}>
+          <Link href="/" className="md:hidden" onClick={closeMenu}>
             <LogoGiulia className="h-[62px]" />
           </Link>
-          <nav className="hidden lg:block">
+          <nav className="hidden md:block">
             <MainMenu onClose={closeMenu} />
           </nav>
         </div>
@@ -48,18 +48,18 @@ export default function Header() {
         <Link
           href="/"
           onClick={closeMenu}
-          className="hidden lg:block absolute left-1/2 -translate-x-1/2 flex-shrink-0"
+          className="hidden md:block absolute left-1/2 -translate-x-1/2 flex-shrink-0"
         >
-          <LogoGiulia className="lg:h-[88px]" />
+          <LogoGiulia className="md:h-[88px]" />
         </Link>
 
         {/*
           RIGHT slot
           Mobile: hamburger toggle
-          Desktop: social icons (toggle is hidden by its own lg:hidden class)
+          Desktop: social icons (toggle is hidden by its own md:hidden class)
         */}
         <div className="flex-1 flex items-center justify-end">
-          <nav className="hidden lg:flex">
+          <nav className="hidden md:flex">
             <SocialIcons />
           </nav>
           <Toggle onClick={() => setMenuOpen(p => !p)} isMenuOpen={menuOpen} />
@@ -68,7 +68,7 @@ export default function Header() {
 
       {/* ── MOBILE OPEN MENU ── */}
       {menuOpen && (
-        <div className="lg:hidden flex flex-col items-center justify-center gap-12 h-[calc(100vh-6rem)]">
+        <div className="md:hidden flex flex-col items-center justify-center gap-12 h-[calc(100vh-6rem)]">
           <MainMenu onClose={closeMenu} mobile />
           <SocialIcons />
         </div>

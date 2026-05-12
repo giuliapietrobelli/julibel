@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import HeroCarousel from './hero-carousel'
-import { SectionSeparator } from './ornaments'
 
 const galleryItems = [
   { title: 'Retro Country', href: '/retro-country', src: '/collection-retro-country.png', alt: 'Retro Country' },
@@ -28,9 +27,8 @@ export default function Home() {
 
       <HeroCarousel />
 
-      <div className="px-8 md:px-16 pt-14 pb-4">
-        <SectionSeparator />
-        <p className="text-[9px] tracking-[0.3em] uppercase font-light text-center mt-6 mb-1" style={{ color: '#A8B2A1' }}>
+      <div className="px-8 md:px-16 pt-0 md:pt-10 pb-4">
+        <p className="text-[9px] tracking-[0.3em] uppercase font-light text-center mb-1" style={{ color: '#A8B2A1' }}>
           All Collections
         </p>
       </div>
