@@ -29,7 +29,7 @@ export default function RootLayout({
 
         <Header />
 
-        <div className='pt-24 md:pt-32 lg:pt-52'>
+        <div className='pt-24 md:pt-32 lg:pt-40'>
           {children}
         </div>
 

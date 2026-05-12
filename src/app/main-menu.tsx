@@ -11,25 +11,23 @@ const workItems = [
   { title: 'Echoes of Siam', href: '/echoes-of-siam' },
 ]
 
-export default function MainMenu(props: any) {
+export default function MainMenu({ onClose, mobile = false }: { onClose?: () => void; mobile?: boolean }) {
   const [workOpen, setWorkOpen] = useState(false)
   const dropdownRef = useRef<HTMLLIElement>(null)
   const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
   const pathname = usePathname()
 
   function openDropdown() {
-    if (window.innerWidth < 1024) return
     if (closeTimeout.current) clearTimeout(closeTimeout.current)
     setWorkOpen(true)
   }
 
   function closeDropdown() {
-    if (window.innerWidth < 1024) return
     closeTimeout.current = setTimeout(() => setWorkOpen(false), 150)
   }
 
   function handleWorkClick(e: React.MouseEvent) {
-    if (window.innerWidth < 1024) {
+    if (mobile) {
       e.preventDefault()
       setWorkOpen(prev => !prev)
     }
@@ -47,32 +45,44 @@ export default function MainMenu(props: any) {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const baseClasses = 'flex-col items-center text-center gap-4 text-4xl lg:text-xs font-extralight lg:font-light leading-loose text-zinc-900 lg:flex lg:flex-row lg:gap-8 lg:tracking-widest lg:uppercase';
-  const closeClasses = baseClasses + ' ' + 'hidden lg:visible';
+  const navClasses = mobile
+    ? 'flex flex-col items-center gap-8 text-3xl font-extralight tracking-wide'
+    : 'flex items-center gap-8 text-[11px] font-light tracking-[0.15em] uppercase'
 
-  function handleClose() {
-    setWorkOpen(false)
-    props.onClick?.()
-  }
+  const linkBase = 'transition-opacity duration-200 hover:opacity-50'
+  const activeClass = 'underline underline-offset-8 decoration-1'
 
   return (
-    <ul className={props.isMenuOpen ? baseClasses : closeClasses}>
-      <li ref={dropdownRef} className="relative" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
+    <ul className={navClasses} style={{ color: '#4A4644' }}>
+      <li
+        ref={dropdownRef}
+        className="relative"
+        onMouseEnter={!mobile ? openDropdown : undefined}
+        onMouseLeave={!mobile ? closeDropdown : undefined}
+      >
         <Link
           href="/"
           onClick={handleWorkClick}
-          className={`underline-offset-8 hover:underline decoration-1 ${isWorkActive ? 'underline' : ''}`}
+          className={`${linkBase} ${isWorkActive ? activeClass : ''}`}
         >
           Collections
         </Link>
         {workOpen && (
-          <ul className="flex flex-col items-center lg:items-start gap-3 lg:gap-0 mt-2 lg:absolute lg:top-full lg:right-0 lg:mt-1 lg:bg-white lg:border lg:border-zinc-200 lg:shadow-md lg:py-1 lg:min-w-max text-left normal-case tracking-normal font-extralight">
-            {workItems.map((item) => (
-              <li key={item.href} className="lg:w-full">
+          <ul className={
+            mobile
+              ? 'flex flex-col items-center gap-2 mt-3'
+              : 'absolute top-full left-0 mt-2 bg-white border border-zinc-100 shadow-sm py-2 min-w-max z-50'
+          }>
+            {workItems.map(item => (
+              <li key={item.href}>
                 <Link
                   href={item.href}
-                  onClick={handleClose}
-                  className={`block text-2xl lg:text-xs font-extralight normal-case tracking-normal text-zinc-900 lg:px-5 lg:py-2 hover:underline lg:hover:bg-zinc-50 underline-offset-4 ${pathname === item.href ? 'underline' : ''}`}
+                  onClick={onClose}
+                  className={
+                    mobile
+                      ? `block text-xl font-extralight py-1 transition-opacity hover:opacity-50 ${pathname === item.href ? 'underline underline-offset-4' : ''}`
+                      : `block text-[10px] tracking-normal normal-case font-extralight px-5 py-2 hover:bg-zinc-50 transition-colors ${pathname === item.href ? 'underline underline-offset-4' : ''}`
+                  }
                 >
                   {item.title}
                 </Link>
@@ -82,20 +92,17 @@ export default function MainMenu(props: any) {
         )}
       </li>
       <li>
-        <UnderlineLink onClick={handleClose} href="/about" isActive={pathname === '/about'}>About</UnderlineLink>
+        <Link href="/about" onClick={onClose}
+          className={`${linkBase} ${pathname === '/about' ? activeClass : ''}`}>
+          About
+        </Link>
       </li>
       <li>
-        <UnderlineLink onClick={handleClose} href="/contact" isActive={pathname === '/contact'}>Contact</UnderlineLink>
+        <Link href="/contact" onClick={onClose}
+          className={`${linkBase} ${pathname === '/contact' ? activeClass : ''}`}>
+          Contact
+        </Link>
       </li>
     </ul>
-  )
-}
-
-function UnderlineLink({ isActive, className, ...props }: any) {
-  return (
-    <Link
-      className={`underline-offset-8 hover:underline decoration-1 ${isActive ? 'underline' : ''}`}
-      {...props}
-    />
   )
 }
