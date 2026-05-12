@@ -25,8 +25,8 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between pb-11">
 
       <div className="animate-fade-up flex flex-col flex-wrap min-h-52 slide">
-        <h1 className="m-auto text-center sm:pt-6 sm:pb-14 lg:pt-10 lg:pb-28 px-8 text-xl sm:text-2xl lg:text-3xl font-light text-zinc-900" style={{ lineHeight: '2.50rem', maxWidth: '41rem' }}>
-          Crafting pattern designs and illustrations perfect for modern fabric, wallpaper and home decor
+        <h1 className="m-auto text-center sm:pt-6 sm:pb-14 lg:pt-10 lg:pb-28 px-8 text-lg sm:text-xl lg:text-2xl font-light text-zinc-900 leading-relaxed" style={{ maxWidth: '52rem' }}>
+          Surface pattern collections inspired by vintage charm, nature and storytelling for fabric, wallpaper and home decor.
         </h1>
       </div>
 
