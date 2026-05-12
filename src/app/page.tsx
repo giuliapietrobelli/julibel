@@ -24,7 +24,7 @@ export default function Home() {
   }, [visibleCount])
 
   return (
-    <main className="flex flex-col pb-11">
+    <main className="flex flex-col pb-11 max-w-[1440px] mx-auto">
 
       <HeroCarousel />
 

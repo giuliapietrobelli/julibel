@@ -26,13 +26,13 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="w-full flex flex-col lg:flex-row overflow-hidden lg:min-h-[640px] -mt-24 md:-mt-32 lg:-mt-40"
+      className="w-full flex flex-col lg:flex-row overflow-hidden lg:min-h-[640px] -mt-24 md:-mt-32 lg:-mt-32"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       {/* ── LEFT TEXT PANEL ── */}
       <div
-        className="order-2 lg:order-1 relative flex flex-col lg:w-[40%] w-full flex-shrink-0 px-10 md:px-12 xl:px-14 pt-14 pb-20 lg:pt-[14rem] lg:pb-24 min-h-[360px] lg:min-h-0"
+        className="order-2 lg:order-1 relative flex flex-col lg:w-[40%] w-full flex-shrink-0 px-10 md:px-12 xl:px-14 pt-14 pb-20 lg:pt-48 lg:pb-24 min-h-[360px] lg:min-h-0"
         style={{ background: '#F5F1EB' }}
       >
         {/* ── FIXED: main tagline + divider ── */}
@@ -113,7 +113,7 @@ export default function HeroCarousel() {
               className="object-cover"
               style={{ objectPosition: slide.imagePosition }}
               priority={i === 0}
-              sizes="(max-width: 1024px) 100vw, 60vw"
+              sizes="(max-width: 1024px) 100vw, 864px"
             />
           </div>
         ))}

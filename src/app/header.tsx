@@ -20,10 +20,11 @@ export default function Header() {
   function closeMenu() { setMenuOpen(false) }
 
   return (
-    <header className={`fixed z-50 w-full bg-white px-8 md:px-12 xl:px-16 ${menuOpen ? 'h-screen' : ''}`}>
+    <header className={`fixed z-50 w-full bg-white ${menuOpen ? 'h-screen' : ''}`}>
+      <div className="max-w-[1440px] mx-auto px-8 md:px-12 xl:px-16">
 
       {/* ── MAIN ROW ── */}
-      <div className="flex items-center h-[67px] md:h-20 lg:h-[160px]">
+      <div className="flex items-center h-24 lg:h-32">
 
         {/*
           LEFT slot
@@ -32,7 +33,7 @@ export default function Header() {
         */}
         <div className="flex-1 flex items-center">
           <Link href="/" className="lg:hidden" onClick={closeMenu}>
-            <LogoGiulia className="h-[50px] md:h-[60px]" />
+            <LogoGiulia className="h-[62px]" />
           </Link>
           <nav className="hidden lg:block">
             <MainMenu onClose={closeMenu} />
@@ -49,7 +50,7 @@ export default function Header() {
           onClick={closeMenu}
           className="hidden lg:block absolute left-1/2 -translate-x-1/2 flex-shrink-0"
         >
-          <LogoGiulia className="lg:h-[110px]" />
+          <LogoGiulia className="lg:h-[88px]" />
         </Link>
 
         {/*
@@ -67,11 +68,12 @@ export default function Header() {
 
       {/* ── MOBILE OPEN MENU ── */}
       {menuOpen && (
-        <div className="lg:hidden flex flex-col items-center justify-center gap-12 h-[calc(100vh-67px)] md:h-[calc(100vh-5rem)]">
+        <div className="lg:hidden flex flex-col items-center justify-center gap-12 h-[calc(100vh-6rem)]">
           <MainMenu onClose={closeMenu} mobile />
           <SocialIcons />
         </div>
       )}
+      </div>
     </header>
   )
 }
