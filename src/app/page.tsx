@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
+import HeroCarousel from './hero-carousel'
+import { SectionSeparator } from './ornaments'
 
 const galleryItems = [
   { title: 'Retro Country', href: '/retro-country', src: '/collection-retro-country.png', alt: 'Retro Country' },
@@ -22,15 +24,18 @@ export default function Home() {
   }, [visibleCount])
 
   return (
-    <main className="flex flex-col items-center justify-between pb-11">
+    <main className="flex flex-col pb-11">
 
-      <div className="animate-fade-up flex flex-col flex-wrap min-h-52 slide">
-        <h1 className="m-auto text-center sm:pt-6 sm:pb-14 lg:pt-10 lg:pb-28 px-8 text-xl sm:text-2xl lg:text-3xl text-charcoal" style={{ maxWidth: '44rem', lineHeight: 1.45 }}>
-          Surface pattern collections inspired by vintage charm, nature and storytelling for fabric, wallpaper and home decor.
-        </h1>
+      <HeroCarousel />
+
+      <div className="px-8 md:px-16 pt-14 pb-4">
+        <SectionSeparator />
+        <p className="text-[9px] tracking-[0.3em] uppercase font-light text-center mt-6 mb-1" style={{ color: '#A8B2A1' }}>
+          All Collections
+        </p>
       </div>
 
-      <div className="w-full px-8 md:px-16 pb-11">
+      <div className="w-full px-8 md:px-16 pt-4 pb-11">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {galleryItems.map((item, index) => (
             <Link
