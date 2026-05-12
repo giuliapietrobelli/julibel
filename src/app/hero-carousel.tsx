@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 
 const slides = [
-  { title: 'Dreamy Jungle Nursery', image: '/collection-hero-sleepy-jungle-2560x700.png', imagePosition: '58% center' },
+  { title: 'Dreamy Jungle Nursery', image: '/home-carousel-1.jpg', imagePosition: 'center' },
   { title: 'Secret Garden', image: '/collection-hero-enchanted-woodland-2560x700.png', imagePosition: '32% center' },
   { title: 'Soft Tide', image: '/collection-hero-beachy-boho-2560x700.png', imagePosition: 'center' },
   { title: 'Echoes of Siam', image: '/collection-hero-echoes-siam-2560x700.png', imagePosition: 'center' },
