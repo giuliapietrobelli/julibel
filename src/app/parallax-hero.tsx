@@ -3,6 +3,7 @@
 import { useEffect, useRef, ReactNode } from 'react'
 import { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { DividerOrnament } from './ornaments'
 
 type Props = {
   title: string
@@ -70,17 +71,18 @@ export default function ParallaxHero({ title, description, image, children, noSa
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 flex flex-col px-8 pt-24 md:pt-32">
-        <Link href="/" className="mt-4 text-sm font-extralight text-white/70 hover:text-white transition-colors duration-300">
+        <Link href="/" className="mt-4 text-xs font-light tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors duration-300">
           ← All collections
         </Link>
 
-        <div className="flex flex-col items-center gap-8 text-white text-center max-w-2xl mx-auto pt-16 pb-24">
-          <h1 className="font-normal text-3xl md:text-5xl leading-snug">{title}</h1>
+        <div className="flex flex-col items-center gap-5 text-white text-center max-w-3xl mx-auto pt-16 pb-24">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl" style={{ lineHeight: 1.1, letterSpacing: '0.02em' }}>{title}</h1>
+          <DividerOrnament color="rgba(255,255,255,0.4)" />
           {description && (
-            <p className="font-extralight text-base md:text-lg leading-relaxed opacity-90">{description}</p>
+            <p className="font-extralight text-xs md:text-sm leading-loose opacity-70 max-w-md tracking-wider">{description}</p>
           )}
           {children && (
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center mt-2">
               {children}
             </div>
           )}

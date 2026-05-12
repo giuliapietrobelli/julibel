@@ -20,7 +20,19 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-poppins)', 'sans-serif'],
+        serif: ['var(--font-dm-serif)', 'serif'],
+      },
       colors: {
+        ivory: '#F5F1EB',
+        sand: '#ECE5DC',
+        card: '#FAF7F2',
+        charcoal: '#4A4644',
+        'warm-gray': '#7A726D',
+        sage: '#A8B2A1',
+        'dusty-blue': '#7E93A3',
+        woodland: '#2F2D31',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

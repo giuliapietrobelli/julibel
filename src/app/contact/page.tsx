@@ -1,8 +1,8 @@
 "use client"
 import { useState } from 'react'
 
-const inputClass = "border border-zinc-200 px-3 py-2.5 text-sm font-extralight text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-400 bg-white transition-colors duration-200 w-full"
-const labelClass = "text-xs font-light text-zinc-500 tracking-wide uppercase"
+const inputClass = "border border-[#ECE5DC] px-3 py-2.5 text-sm font-extralight text-[#4A4644] placeholder:text-[#7A726D] focus:outline-none focus:border-[#7E93A3] bg-card transition-colors duration-200 w-full"
+const labelClass = "text-xs font-light text-zinc-400 tracking-widest uppercase"
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -41,10 +41,10 @@ export default function Contact() {
   }
 
   return (
-    <div className="animate-fade-up min-h-screen bg-stone-100">
+    <div className="animate-fade-up min-h-screen bg-ivory">
       <div className="max-w-2xl mx-auto px-8 py-16 md:py-24 flex flex-col gap-12">
 
-        <h1 className="text-3xl md:text-4xl font-light text-zinc-800 text-center">Enquiry Form</h1>
+        <h1 className="text-3xl md:text-4xl text-charcoal text-center">Enquiry Form</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-10">
 
@@ -114,7 +114,7 @@ export default function Contact() {
             <button
               type="button"
               onClick={addDesignLink}
-              className="flex items-center gap-2 self-start text-xs font-light text-zinc-400 hover:text-zinc-700 transition-colors duration-200 group"
+              className="flex items-center gap-2 self-start text-xs font-light text-zinc-400 hover:text-charcoal transition-colors duration-200 group"
             >
               <span className="w-5 h-5 rounded-full border border-zinc-300 group-hover:border-zinc-600 flex items-center justify-center transition-colors duration-200 text-base leading-none">+</span>
               Add more links
@@ -136,7 +136,7 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="self-start px-10 py-3 bg-zinc-800 text-white text-sm font-light tracking-widest hover:bg-zinc-600 transition-colors duration-300"
+            className="self-start px-10 py-3 bg-charcoal text-ivory text-xs font-light tracking-widest uppercase hover:bg-woodland transition-colors duration-300"
           >
             Submit
           </button>

@@ -25,7 +25,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between pb-11">
 
       <div className="animate-fade-up flex flex-col flex-wrap min-h-52 slide">
-        <h1 className="m-auto text-center sm:pt-6 sm:pb-14 lg:pt-10 lg:pb-28 px-8 text-lg sm:text-xl lg:text-2xl font-light text-zinc-900 leading-relaxed" style={{ maxWidth: '52rem' }}>
+        <h1 className="m-auto text-center sm:pt-6 sm:pb-14 lg:pt-10 lg:pb-28 px-8 text-xl sm:text-2xl lg:text-3xl text-charcoal" style={{ maxWidth: '44rem', lineHeight: 1.45 }}>
           Surface pattern collections inspired by vintage charm, nature and storytelling for fabric, wallpaper and home decor.
         </h1>
       </div>
@@ -38,8 +38,8 @@ export default function Home() {
               href={item.href}
               className={`relative block leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
             >
-              <div className="flex items-center justify-center absolute inset-0 bg-white opacity-0 hover:opacity-75 transition-opacity duration-500 z-10">
-                <span className="font-medium text-xl lg:text-2xl leading-normal">{item.title}</span>
+              <div className="flex items-center justify-center absolute inset-0 bg-ivory opacity-0 hover:opacity-90 transition-opacity duration-500 z-10">
+                <span className="font-serif text-lg lg:text-2xl text-charcoal" style={{ letterSpacing: '0.02em' }}>{item.title}</span>
               </div>
               <Image
                 src={item.src}
