@@ -56,8 +56,14 @@ export default function MainMenu({ onClose, mobile = false }: { onClose?: () => 
     <ul className={navClasses} style={{ color: '#4A4644' }}>
       <li>
         <Link
-          href="/"
-          onClick={onClose}
+          href="/#collections"
+          onClick={(e) => {
+            if (pathname === '/') {
+              e.preventDefault()
+              document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })
+            }
+            onClose?.()
+          }}
           className={`${linkBase} ${isWorkActive ? activeClass : ''}`}
         >
           Collections
