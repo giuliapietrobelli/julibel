@@ -64,6 +64,17 @@ export default function MainMenu({ onClose, mobile = false }: { onClose?: () => 
         </Link>
       </li>
       <li>
+        <a
+          href="https://www.spoonflower.com/profiles/julibel_studio?sort=bestselling"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={onClose}
+          className={linkBase}
+        >
+          Shop
+        </a>
+      </li>
+      <li>
         <Link href="/about" onClick={onClose}
           className={`${linkBase} ${pathname === '/about' ? activeClass : ''}`}>
           About
