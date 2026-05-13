@@ -72,7 +72,7 @@ export default function ParallaxHero({ title, description, image, children, noSa
 
       <div className="relative z-10 flex flex-col pt-24 md:pt-32">
         <div className="max-w-[1440px] mx-auto w-full px-8 md:px-12 xl:px-16">
-          <Link href="/" className="mt-8 inline-block text-xs font-light tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors duration-300">
+          <Link href="/#collections" className="mt-8 inline-block text-xs font-light tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors duration-300">
             ← All collections
           </Link>
         </div>

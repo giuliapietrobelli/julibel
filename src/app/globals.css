@@ -67,6 +67,14 @@
 }
  
 @layer base {
+  html {
+    scroll-padding-top: 96px;
+  }
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 128px;
+    }
+  }
   * {
     @apply border-border;
   }

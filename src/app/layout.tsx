@@ -36,7 +36,7 @@ export default function RootLayout({
         <div className="flex flex-col gap-6 justify-center bg-charcoal min-h-96 py-16">
           <ul className="flex text-center justify-center gap-8">
             <li>
-              <Link href="/" className="text-sand/60 text-xs font-light tracking-widest uppercase hover:text-sand/90 transition-colors duration-300">Collections</Link>
+              <Link href="/#collections" className="text-sand/60 text-xs font-light tracking-widest uppercase hover:text-sand/90 transition-colors duration-300">Collections</Link>
             </li>
             <li>
               <Link href="/about" className="text-sand/60 text-xs font-light tracking-widest uppercase hover:text-sand/90 transition-colors duration-300">About</Link>
