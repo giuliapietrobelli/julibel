@@ -3,10 +3,10 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 
 const slides = [
-  { title: 'Dreamy Jungle Nursery', image: '/home-carousel-1.jpg', imagePosition: 'center' },
-  { title: 'Secret Garden', image: '/collection-hero-enchanted-woodland-2560x700.png', imagePosition: '32% center' },
-  { title: 'Soft Tide', image: '/collection-hero-beachy-boho-2560x700.png', imagePosition: 'center' },
-  { title: 'Echoes of Siam', image: '/collection-hero-echoes-siam-2560x700.png', imagePosition: 'center' },
+  { title: 'Dreamy Jungle Nursery', image: '/home-carousel-1.png', imagePosition: 'center' },
+  { title: 'Secret Garden', image: '/home-carousel-2.png', imagePosition: 'center' },
+  { title: 'Soft Tide', image: '/home-carousel-3.png', imagePosition: 'center' },
+  { title: 'Echoes of Siam', image: '/home-carousel-4.png', imagePosition: 'center' },
 ]
 
 export default function HeroCarousel() {
