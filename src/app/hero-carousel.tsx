@@ -12,6 +12,7 @@ const slides = [
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [slideKeys, setSlideKeys] = useState(() => slides.map((_, i) => i))
   const total = slides.length
   const touchStartX = useRef<number | null>(null)
 
@@ -20,9 +21,17 @@ export default function HeroCarousel() {
 
   useEffect(() => {
     if (paused) return
-    const id = setInterval(next, 7000)
+    const id = setInterval(next, 6000)
     return () => clearInterval(id)
   }, [paused, next])
+
+  useEffect(() => {
+    setSlideKeys(prev => {
+      const next = [...prev]
+      next[current] = Date.now()
+      return next
+    })
+  }, [current])
 
   function handleTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.touches[0].clientX
@@ -119,19 +128,21 @@ export default function HeroCarousel() {
           {slides.map((slide, i) => (
             <div
               key={i}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
                 i === current ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                className="object-cover"
-                style={{ objectPosition: slide.imagePosition }}
-                priority={i === 0}
-                sizes="(max-width: 768px) 100vw, 864px"
-              />
+              <div key={slideKeys[i]} className="absolute inset-0 animate-ken-burns">
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: slide.imagePosition }}
+                  priority={i === 0}
+                  sizes="(max-width: 768px) 100vw, 864px"
+                />
+              </div>
             </div>
           ))}
         </div>
