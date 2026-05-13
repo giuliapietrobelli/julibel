@@ -55,7 +55,7 @@ export default function Contact() {
       <div className="max-w-2xl mx-auto px-8 py-16 md:py-24 flex flex-col gap-12">
 
         <div className="flex flex-col items-center gap-4 text-center">
-          <TinyBotanical color="#7A726D" />
+          <TinyBotanical color="rgba(122, 114, 109, 0.45)" />
           <p className="text-base font-light text-charcoal leading-relaxed">Have a project, collaboration or licensing opportunity in mind?</p>
           <p className="text-base font-light text-charcoal leading-relaxed">Let's create something beautiful together!</p>
         </div>

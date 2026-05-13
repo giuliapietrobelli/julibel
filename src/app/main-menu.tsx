@@ -54,42 +54,14 @@ export default function MainMenu({ onClose, mobile = false }: { onClose?: () => 
 
   return (
     <ul className={navClasses} style={{ color: '#4A4644' }}>
-      <li
-        ref={dropdownRef}
-        className="relative"
-        onMouseEnter={!mobile ? openDropdown : undefined}
-        onMouseLeave={!mobile ? closeDropdown : undefined}
-      >
+      <li>
         <Link
           href="/"
-          onClick={handleWorkClick}
+          onClick={onClose}
           className={`${linkBase} ${isWorkActive ? activeClass : ''}`}
         >
           Collections
         </Link>
-        {workOpen && (
-          <ul className={
-            mobile
-              ? 'flex flex-col items-center gap-2 mt-3'
-              : 'absolute top-full left-0 mt-2 bg-white border border-zinc-100 shadow-sm py-2 min-w-max z-50'
-          }>
-            {workItems.map(item => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={onClose}
-                  className={
-                    mobile
-                      ? `block text-xl font-extralight py-1 transition-opacity hover:opacity-50 ${pathname === item.href ? 'underline underline-offset-4' : ''}`
-                      : `block text-[10px] tracking-normal normal-case font-extralight px-5 py-2 hover:bg-zinc-50 transition-colors ${pathname === item.href ? 'underline underline-offset-4' : ''}`
-                  }
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
       </li>
       <li>
         <Link href="/about" onClick={onClose}
