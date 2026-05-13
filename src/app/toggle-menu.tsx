@@ -4,7 +4,7 @@ export default function Toggle({ onClick, isMenuOpen }: { onClick: () => void; i
   return (
     <button
       onClick={onClick}
-      className="w-10 h-10 flex items-center justify-center md:hidden"
+      className="w-10 h-10 flex items-center justify-center lg:hidden"
       aria-expanded={isMenuOpen}
       aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
     >

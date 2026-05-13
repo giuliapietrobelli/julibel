@@ -34,7 +34,7 @@ export default function DesignPage() {
 
   return (
     <>
-      <div className="relative min-h-[70vh] overflow-hidden flex items-center justify-center -mt-24 md:-mt-32 pt-24 md:pt-32">
+      <div className="relative min-h-[70vh] overflow-hidden flex items-center justify-center -mt-24 lg:-mt-32 pt-24 lg:pt-32">
         <div
           ref={gridRef}
           className="absolute"

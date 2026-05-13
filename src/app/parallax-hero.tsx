@@ -38,7 +38,7 @@ export default function ParallaxHero({ title, description, image, children, noSa
   }, [noSave, src])
 
   return (
-    <div className="relative overflow-hidden -mt-24 md:-mt-32">
+    <div className="relative overflow-hidden -mt-24 lg:-mt-32">
       <div
         ref={gridRef}
         className="absolute"
@@ -70,7 +70,7 @@ export default function ParallaxHero({ title, description, image, children, noSa
 
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 flex flex-col pt-24 md:pt-32">
+      <div className="relative z-10 flex flex-col pt-24 lg:pt-32">
         <div className="max-w-[1440px] mx-auto w-full px-8 md:px-12 xl:px-16">
           <Link href="/#collections" className="mt-8 inline-block text-xs font-light tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors duration-300">
             ← All collections
