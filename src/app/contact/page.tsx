@@ -6,11 +6,14 @@ const labelClass = "text-xs font-light text-zinc-400 tracking-widest uppercase"
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '',
     businessName: '', website: '', social: '', additionalInfo: '',
   })
   const [designLinks, setDesignLinks] = useState([''])
+  const [honeypot, setHoneypot] = useState('')
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -26,9 +29,21 @@ export default function Contact() {
     setDesignLinks([...designLinks, ''])
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...form, designLinks, _hp: honeypot }),
+    })
+    setLoading(false)
+    if (res.ok) {
+      setSubmitted(true)
+    } else {
+      setError('Something went wrong. Please try again or email me directly.')
+    }
   }
 
   if (submitted) {
@@ -47,6 +62,16 @@ export default function Contact() {
         <h1 className="text-3xl md:text-4xl text-charcoal text-center">Enquiry Form</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+          <input
+            type="text"
+            name="phone_number"
+            value={honeypot}
+            onChange={e => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
+          />
 
           {/* Name section */}
           <div className="flex flex-col gap-6">
@@ -134,11 +159,16 @@ export default function Contact() {
             />
           </div>
 
+          {error && (
+            <p className="text-sm font-extralight text-red-500">{error}</p>
+          )}
+
           <button
             type="submit"
-            className="self-start px-10 py-3 bg-charcoal text-ivory text-xs font-light tracking-widest uppercase hover:bg-woodland transition-colors duration-300"
+            disabled={loading}
+            className="self-start px-10 py-3 bg-charcoal text-ivory text-xs font-light tracking-widest uppercase hover:bg-woodland transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit
+            {loading ? 'Sending…' : 'Submit'}
           </button>
 
         </form>
