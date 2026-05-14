@@ -120,5 +120,5 @@
 }
 
 .animate-ken-burns {
-  animation: ken-burns 12s ease-out forwards;
+  animation: ken-burns 12s ease-in-out infinite alternate;
 }
