@@ -81,6 +81,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
   h1, h2 {
     @apply font-serif;
     font-weight: 400;

@@ -4,10 +4,10 @@ import Image from 'next/image'
 
 const slides = [
   { title: 'Dreamy Jungle Nursery', image: '/home-carousel-1.png', imagePosition: 'center', bgImage: '/collection-sleepy-jungle.png' },
-  { title: 'Secret Garden',         image: '/home-carousel-2.png', imagePosition: 'center', bgImage: '/collection-echoes-siam.png' },
+  { title: 'Secret Garden',         image: '/home-carousel-2.png', imagePosition: 'center', bgImage: '/collection-beachy-boho.png' },
   { title: 'Soft Tide',             image: '/home-carousel-3.png', imagePosition: 'center', bgImage: '/collection-enchanted-woodland.png' },
   { title: 'Echoes of Siam',        image: '/home-carousel-4.png', imagePosition: 'center', bgImage: '/collection-retro-country.png' },
-  { title: '',                       image: '/home-carousel-5.png', imagePosition: 'center', bgImage: '/collection-beachy-boho.png' },
+  { title: '',                       image: '/home-carousel-5.png', imagePosition: 'center', bgImage: '/collection-echoes-siam.png' },
 ]
 
 export default function HeroCarousel() {
@@ -86,7 +86,7 @@ export default function HeroCarousel() {
                 <div className="flex-1 flex items-center">
                   <div>
                     <p
-                      className="font-serif text-xl md:text-2xl min-[855px]:text-3xl xl:text-4xl"
+                      className="font-serif text-xl md:text-2xl min-[855px]:text-3xl xl:text-[2.125rem]"
                       style={{ color: '#4A4644', lineHeight: 1.2, letterSpacing: '0.02em' }}
                     >
                       Surface pattern collections inspired by vintage charm, nature and storytelling.
