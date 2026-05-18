@@ -47,7 +47,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="w-full flex flex-col overflow-hidden md:min-h-[640px] -mt-24 lg:-mt-32"
+      className="w-full flex flex-col overflow-hidden md:min-h-[640px] -mt-24 lg:-mt-24"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -76,7 +76,7 @@ export default function HeroCarousel() {
           ))}
 
           {/* Outer wrapper: clears fixed header, then equal gap around the box */}
-          <div className="flex-1 flex flex-col pt-24 lg:pt-32 relative z-10">
+          <div className="flex-1 flex flex-col pt-24 lg:pt-24 relative z-10">
             <div className="flex-1 p-8 md:p-10 lg:p-8 xl:p-12">
               {/* Semi-transparent box fills available space, text centered vertically / nav bottom */}
               <div
