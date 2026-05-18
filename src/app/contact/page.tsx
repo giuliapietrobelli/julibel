@@ -42,7 +42,7 @@ export default function Contact() {
     return (
       <div className="animate-fade-up container flex flex-col items-center gap-4 py-52">
         <h1 className="text-2xl font-light text-zinc-800">Thank you!</h1>
-        <p className="text-zinc-400 font-extralight text-sm">Your message has been sent. I'll be in touch soon.</p>
+        <p className="text-zinc-400 font-extralight text-sm">Your message has been sent. I&apos;ll be in touch soon.</p>
         <Link href="/" className="mt-4 text-xs font-light text-zinc-400 hover:text-charcoal underline underline-offset-4 transition-colors duration-200">
           Back to home
         </Link>
@@ -57,7 +57,7 @@ export default function Contact() {
         <div className="flex flex-col items-center gap-4 text-center">
           <TinyBotanical color="rgba(122, 114, 109, 0.45)" />
           <p className="text-base font-light text-charcoal leading-relaxed">Have a project, collaboration or licensing opportunity in mind?</p>
-          <p className="text-base font-light text-charcoal leading-relaxed">Let's create something beautiful together!</p>
+          <p className="text-base font-light text-charcoal leading-relaxed">Let&apos;s create something beautiful together!</p>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">

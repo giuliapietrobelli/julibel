@@ -47,10 +47,10 @@ export default function DesignPage() {
             gridAutoRows: `${TILE}px`,
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          {Array.from({ length: COLS * ROWS }).map((_, i) => (
-            <img key={i} src={design.src} alt="" width={TILE} height={TILE} style={{ objectFit: 'cover', display: 'block' }} />
-          ))}
+          {Array.from({ length: COLS * ROWS }).map((_, i) => {
+            // eslint-disable-next-line @next/next/no-img-element
+            return <img key={i} src={design.src} alt="" width={TILE} height={TILE} style={{ objectFit: 'cover', display: 'block' }} />
+          })}
         </div>
 
         <div className="absolute inset-0 bg-black/40" />
