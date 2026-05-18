@@ -36,7 +36,7 @@ export default function About() {
 
       <div className="lg:w-1/2 flex justify-center items-start lg:sticky lg:top-24 lg:self-start">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/about.png" alt="profile picture" style={{ width: '360px', height: 'auto', maxWidth: '100%' }} />
+        <img src="/julibel-profile.jpg" alt="profile picture" style={{ width: '360px', height: 'auto', maxWidth: '100%' }} />
       </div>
 
     </div>
