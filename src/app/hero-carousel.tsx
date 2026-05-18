@@ -52,10 +52,33 @@ export default function HeroCarousel() {
       onMouseLeave={() => setPaused(false)}
     >
       {/* ── PANELS ROW ── */}
-      <div className="flex flex-row flex-1 min-h-[340px] md:min-h-0">
+      <div className="relative flex flex-row flex-1 min-h-[420px] md:min-h-0">
 
-        {/* ── LEFT TEXT PANEL ── */}
-        <div className="relative flex flex-col w-1/2 lg:w-[40%] flex-shrink-0 overflow-hidden">
+        {/* ── MOBILE TEXT OVERLAY ── */}
+        <div className="lg:hidden absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+          <div className="pointer-events-auto w-[78%] max-w-xs">
+            <div
+              className="flex flex-col p-8"
+              style={{ backgroundColor: 'rgba(245, 241, 235, 0.88)' }}
+            >
+              <p
+                className="font-serif text-xl"
+                style={{ color: '#4A4644', lineHeight: 1.2, letterSpacing: '0.02em' }}
+              >
+                Surface pattern collections inspired by vintage charm, nature and storytelling.
+              </p>
+              <p
+                className="mt-2 text-[11px] font-light leading-relaxed"
+                style={{ color: '#7A726D', letterSpacing: '0.01em' }}
+              >
+                for fabric, wallpaper and home decor.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── LEFT TEXT PANEL ── (desktop only) */}
+        <div className="hidden lg:relative lg:flex lg:flex-col lg:w-[40%] lg:flex-shrink-0 lg:overflow-hidden">
 
           {/* Per-slide background images — fade between them */}
           {slides.map((slide, i) => (
