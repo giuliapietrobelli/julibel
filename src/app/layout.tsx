@@ -15,6 +15,15 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['200', '300', '400', '500
 export const metadata: Metadata = {
   title: 'Giulia Pietrobelli',
   description: 'Giulia Pietrobelli portfolio website',
+  icons: {
+    icon: [
+      { url: '/favicon/favicon.ico' },
+      { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/favicon/apple-touch-icon.png',
+  },
+  manifest: '/favicon/site.webmanifest',
 }
 
 export default function RootLayout({
