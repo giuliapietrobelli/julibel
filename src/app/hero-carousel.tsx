@@ -56,19 +56,19 @@ export default function HeroCarousel() {
 
         {/* ── MOBILE TEXT OVERLAY ── */}
         <div className="lg:hidden absolute inset-0 z-20 flex items-center justify-center pt-24 pointer-events-none">
-          <div className="pointer-events-auto w-[70%] max-w-xs">
+          <div className="pointer-events-auto w-[70%] max-w-xs md:w-[50%] md:max-w-md">
             <div
-              className="flex flex-col p-8"
+              className="flex flex-col p-8 md:p-12"
               style={{ backgroundColor: 'rgba(245, 241, 235, 0.88)' }}
             >
               <p
-                className="font-serif text-xl"
+                className="font-serif text-xl md:text-3xl"
                 style={{ color: '#4A4644', lineHeight: 1.2, letterSpacing: '0.02em' }}
               >
                 Surface pattern collections inspired by vintage charm, nature and storytelling.
               </p>
               <p
-                className="mt-2 text-[11px] font-light leading-relaxed"
+                className="mt-2 text-[11px] md:text-sm font-light leading-relaxed"
                 style={{ color: '#7A726D', letterSpacing: '0.01em' }}
               >
                 for fabric, wallpaper and home decor.
