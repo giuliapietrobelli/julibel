@@ -61,7 +61,7 @@ export default function DesignPage() {
 
         <div className="animate-fade-up relative z-10 flex flex-col items-center gap-8 text-white text-center px-8 max-w-2xl py-16 md:py-20">
           <h1 className="font-medium text-3xl md:text-4xl leading-tight">{design.title}</h1>
-          <p className="font-extralight text-sm md:text-base leading-loose opacity-90">
+          <p className="font-extralight text-base leading-loose opacity-90">
             Part of the Playful Cats collection — fun, whimsical cat-themed patterns and prints in cheerful pastels and playful colour palettes.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
