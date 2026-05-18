@@ -55,8 +55,8 @@ export default function HeroCarousel() {
       <div className="relative flex flex-row flex-1 min-h-[420px] md:min-h-0">
 
         {/* ── MOBILE TEXT OVERLAY ── */}
-        <div className="lg:hidden absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-          <div className="pointer-events-auto w-[78%] max-w-xs">
+        <div className="lg:hidden absolute inset-0 z-20 flex items-center justify-center pt-24 pointer-events-none">
+          <div className="pointer-events-auto w-[70%] max-w-xs">
             <div
               className="flex flex-col p-8"
               style={{ backgroundColor: 'rgba(245, 241, 235, 0.88)' }}
