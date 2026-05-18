@@ -13,7 +13,7 @@ const dmSerif = DM_Serif_Display({
 const poppins = Poppins({ subsets: ['latin'], weight: ['200', '300', '400', '500'], variable: '--font-poppins' })
 
 export const metadata: Metadata = {
-  title: 'Giulia Pietrobelli',
+  title: 'Julibel Studio',
   description: 'Giulia Pietrobelli portfolio website',
   icons: {
     icon: [
