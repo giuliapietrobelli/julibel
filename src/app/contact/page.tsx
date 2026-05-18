@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { TinyBotanical } from '../ornaments'
 
-const inputClass = "border border-[#ECE5DC] px-3 py-2.5 text-sm font-extralight text-[#4A4644] placeholder:text-[#7A726D] focus:outline-none focus:border-[#7E93A3] bg-card transition-colors duration-200 w-full"
+const inputClass = "border border-[#ECE5DC] px-3 py-2.5 text-sm font-extralight text-[#4A4644] placeholder:text-[#7A726D] focus:outline-none focus:border-[#7E93A3] bg-card-custom transition-colors duration-200 w-full"
 const labelClass = "text-xs font-light text-zinc-400 tracking-widest uppercase"
 
 export default function Contact() {

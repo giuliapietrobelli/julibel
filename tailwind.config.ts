@@ -27,7 +27,7 @@ const config = {
       colors: {
         ivory: '#F5F1EB',
         sand: '#ECE5DC',
-        card: '#FAF7F2',
+        'card-custom': '#FAF7F2',
         charcoal: '#4A4644',
         'warm-gray': '#7A726D',
         sage: '#A8B2A1',
