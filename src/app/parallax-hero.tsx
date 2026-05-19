@@ -77,17 +77,21 @@ export default function ParallaxHero({ title, description, image, children, noSa
           </Link>
         </div>
 
-        <div className="flex flex-col items-center gap-5 text-white text-center max-w-3xl mx-auto pt-16 pb-24">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl" style={{ lineHeight: 1.1, letterSpacing: '0.02em' }}>{title}</h1>
-          <DividerOrnament color="rgba(255,255,255,0.4)" />
-          {description && (
-            <p className="font-extralight text-xs md:text-sm leading-loose opacity-70 max-w-md tracking-wider">{description}</p>
-          )}
-          {children && (
-            <div className="flex flex-wrap gap-3 justify-center mt-2">
-              {children}
-            </div>
-          )}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto px-10 pt-10 pb-24 md:pt-16 md:pb-24 md:px-0">
+          <div
+            className="flex flex-col items-center gap-5 w-full px-10 py-10 md:px-16 md:py-12"
+            style={{ backgroundColor: 'rgba(245, 241, 235, 0.88)' }}
+          >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl" style={{ lineHeight: 1.1, letterSpacing: '0.02em', color: '#4A4644' }}>{title}</h1>
+    {description && (
+              <p className="font-extralight text-xs md:text-sm leading-relaxed max-w-md tracking-wider" style={{ color: '#7A726D' }}>{description}</p>
+            )}
+            {children && (
+              <div className="flex flex-wrap gap-3 justify-center mt-2">
+                {children}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

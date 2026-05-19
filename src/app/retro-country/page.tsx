@@ -26,10 +26,10 @@ export default function Collection1() {
         image="/collection-hero-retro-country.png"
         noSave
       >
-        <Link href="https://www.spoonflower.com/collections/1453699-retro-country-by-julibel_studio" target="_blank" className="px-8 py-3 border border-white/70 text-white text-xs font-light tracking-wider hover:bg-white/10 transition-colors duration-300">
+        <Link href="https://www.spoonflower.com/collections/1453699-retro-country-by-julibel_studio" target="_blank" className="px-8 py-3 border border-[#4A4644] text-[#4A4644] text-xs font-light tracking-wider hover:bg-[#4A4644] hover:text-white transition-colors duration-300">
           Shop on Spoonflower
         </Link>
-        <Link href="/contact" className="px-8 py-3 bg-white/15 text-white text-xs font-light tracking-wider border border-white/70 hover:bg-white/25 transition-colors duration-300">
+        <Link href="/contact" className="px-8 py-3 bg-[#4A4644] text-white text-xs font-light tracking-wider border border-[#4A4644] hover:bg-[#3a3634] transition-colors duration-300">
           Enquire about Licensing
         </Link>
       </ParallaxHero>
