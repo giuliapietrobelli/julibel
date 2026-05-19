@@ -56,8 +56,8 @@ export default function Contact() {
 
         <div className="flex flex-col items-center gap-4 text-center">
           <TinyBotanical color="rgba(122, 114, 109, 0.45)" />
-          <p className="text-base font-light text-charcoal leading-relaxed">Have a project, collaboration or licensing opportunity in mind?</p>
-          <p className="text-base font-light text-charcoal leading-relaxed">Let&apos;s create something beautiful together!</p>
+          <p className="text-base font-light md:font-extralight text-charcoal leading-relaxed tracking-[0.01em] md:tracking-normal">Have a project, collaboration or licensing opportunity in mind?</p>
+          <p className="text-base font-light md:font-extralight text-charcoal leading-relaxed tracking-[0.01em] md:tracking-normal">Let&apos;s create something beautiful together!</p>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
