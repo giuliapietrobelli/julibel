@@ -29,7 +29,7 @@ const config = {
         sand: '#ECE5DC',
         'card-custom': '#FAF7F2',
         charcoal: '#4A4644',
-        'warm-gray': '#7A726D',
+        'warm-gray': '#5C5450',
         sage: '#A8B2A1',
         'dusty-blue': '#7E93A3',
         woodland: '#2F2D31',

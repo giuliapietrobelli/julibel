@@ -69,7 +69,7 @@ export default function HeroCarousel() {
               </p>
               <p
                 className="mt-2 text-sm md:text-lg font-light leading-relaxed"
-                style={{ color: '#7A726D', letterSpacing: '0.01em' }}
+                style={{ color: '#5C5450', letterSpacing: '0.01em' }}
               >
                 for fabric, wallpaper and home decor.
               </p>
@@ -116,7 +116,7 @@ export default function HeroCarousel() {
                     </p>
                     <p
                       className="mt-2 lg:mt-3 text-base lg:text-lg xl:text-xl font-light leading-relaxed"
-                      style={{ color: '#7A726D', letterSpacing: '0.01em' }}
+                      style={{ color: '#5C5450', letterSpacing: '0.01em' }}
                     >
                       for fabric, wallpaper and home decor.
                     </p>

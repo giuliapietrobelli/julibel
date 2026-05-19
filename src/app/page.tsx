@@ -32,7 +32,7 @@ export default function Home() {
 
         <div id="collections" className="px-8 md:px-16 pt-0 md:pt-10 pb-4">
           <div className="hidden md:block"><SectionSeparator /></div>
-          <p className="text-[9px] tracking-[0.3em] uppercase font-light text-center md:mt-6 mb-1" style={{ color: '#A8B2A1' }}>
+          <p className="text-[9px] tracking-[0.3em] uppercase font-light text-center md:mt-6 mb-1" style={{ color: '#5C5450' }}>
             All Collections
           </p>
         </div>
