@@ -65,10 +65,10 @@ export default function HeroCarousel() {
                 className="font-serif text-xl md:text-3xl"
                 style={{ color: '#4A4644', lineHeight: 1.2, letterSpacing: '0.02em' }}
               >
-                Surface pattern collections inspired by vintage charm, nature and storytelling.
+                Surface pattern collections inspired by vintage charm, nature and storytelling
               </p>
               <p
-                className="mt-2 text-[11px] md:text-sm font-light leading-relaxed"
+                className="mt-2 text-sm md:text-lg font-light leading-relaxed"
                 style={{ color: '#7A726D', letterSpacing: '0.01em' }}
               >
                 for fabric, wallpaper and home decor.
@@ -112,10 +112,10 @@ export default function HeroCarousel() {
                       className="font-serif text-xl md:text-2xl min-[855px]:text-3xl xl:text-[2.125rem]"
                       style={{ color: '#4A4644', lineHeight: 1.2, letterSpacing: '0.02em' }}
                     >
-                      Surface pattern collections inspired by vintage charm, nature and storytelling.
+                      Surface pattern collections inspired by vintage charm, nature and storytelling
                     </p>
                     <p
-                      className="mt-2 lg:mt-3 text-[11px] md:text-[12px] lg:text-[13px] font-light leading-relaxed"
+                      className="mt-2 lg:mt-3 text-base lg:text-lg xl:text-xl font-light leading-relaxed"
                       style={{ color: '#7A726D', letterSpacing: '0.01em' }}
                     >
                       for fabric, wallpaper and home decor.
