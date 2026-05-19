@@ -10,7 +10,7 @@ const dmSerif = DM_Serif_Display({
   variable: '--font-dm-serif',
 })
 
-const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500'], variable: '--font-poppins' })
+const poppins = Poppins({ subsets: ['latin'], weight: ['200', '300', '400', '500'], variable: '--font-poppins' })
 
 export const metadata: Metadata = {
   title: 'Julibel Studio',

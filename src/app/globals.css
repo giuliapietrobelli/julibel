@@ -81,11 +81,6 @@
   body {
     @apply bg-background text-foreground;
   }
-  @media (max-width: 767px) {
-    body {
-      font-weight: 500;
-    }
-  }
   img {
     pointer-events: none;
     user-select: none;
