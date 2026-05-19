@@ -84,7 +84,7 @@ export default function ParallaxHero({ title, description, image, children, noSa
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl" style={{ lineHeight: 1.1, letterSpacing: '0.02em', color: '#4A4644' }}>{title}</h1>
     {description && (
-              <p className="font-extralight text-xs md:text-sm leading-relaxed max-w-md tracking-wider" style={{ color: '#5C5450' }}>{description}</p>
+              <p className="font-light text-sm leading-relaxed max-w-md tracking-wider" style={{ color: '#5C5450' }}>{description}</p>
             )}
             {children && (
               <div className="flex flex-wrap gap-3 justify-center mt-2">
