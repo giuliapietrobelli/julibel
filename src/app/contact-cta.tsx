@@ -7,7 +7,7 @@ export default function ContactCta() {
       <div className="container flex flex-col items-center gap-6 text-center px-12 md:px-20 lg:px-32">
         <TinyBotanical color="rgba(122, 114, 109, 0.45)" />
         <h2 className="text-2xl md:text-3xl text-charcoal">Interested in working together?</h2>
-        <p className="font-extralight text-sm leading-loose text-warm-gray max-w-sm">
+        <p className="font-light md:font-extralight text-sm leading-loose text-warm-gray max-w-sm tracking-[0.01em] md:tracking-normal">
           I&apos;d love to hear from you.
         </p>
         <Link
