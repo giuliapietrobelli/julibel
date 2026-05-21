@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { DM_Serif_Display, Poppins } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
+import Script from 'next/script'
 import Header from './header'
 
 const dmSerif = DM_Serif_Display({
@@ -34,6 +35,15 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-4QHC3D9GLP" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4QHC3D9GLP');
+        `}</Script>
+      </head>
       <body className={`${dmSerif.variable} ${poppins.variable} font-sans m-0`}>
 
         <Header />
