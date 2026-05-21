@@ -16,6 +16,9 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['200', '300', '400', '500
 export const metadata: Metadata = {
   title: 'Julibel Studio',
   description: 'Giulia Pietrobelli portfolio website',
+  other: {
+    'p:domain_verify': 'f7ae9e19e0195640666709d62760aabe',
+  },
   icons: {
     icon: [
       { url: '/favicon/favicon.ico' },
