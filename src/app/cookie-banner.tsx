@@ -45,7 +45,7 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean
   )
 }
 
-const btn = 'text-sand/60 text-xs font-light tracking-widest uppercase border border-sand/25 px-4 py-2 hover:text-sand/90 hover:border-sand/50 transition-colors whitespace-nowrap'
+const btn = 'text-sand/50 text-xs font-light tracking-widest uppercase border border-sand/20 px-4 py-2 hover:text-sand/80 hover:border-sand/40 transition-colors whitespace-nowrap'
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false)
@@ -64,7 +64,7 @@ export default function CookieBanner() {
   const commit = (p: Prefs) => { persist(p); applyConsent(p); setVisible(false); setShowPrefs(false) }
 
   if (showPrefs) return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-woodland border-t border-sand/10 px-6 py-8 md:px-12">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-charcoal border-t border-sand/10 px-6 py-8 md:px-12">
       <div className="max-w-2xl mx-auto">
         <p className="text-sand/50 text-xs tracking-widest uppercase mb-6">Cookie Preferences</p>
         <div className="flex flex-col divide-y divide-sand/10">
@@ -119,7 +119,7 @@ export default function CookieBanner() {
   )
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-woodland border-t border-sand/10 px-6 py-5 md:px-12">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-charcoal border-t border-sand/10 px-6 py-5 md:px-12">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
         <p className="text-sand/60 text-xs font-light tracking-wide leading-relaxed flex-1">
           We use cookies to understand how visitors interact with our site.{' '}
