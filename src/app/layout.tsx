@@ -4,6 +4,8 @@ import './globals.css'
 import Link from 'next/link'
 import Script from 'next/script'
 import Header from './header'
+import CookieBanner from './cookie-banner'
+import CookieSettingsLink from './cookie-settings-link'
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -34,11 +36,35 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) { 
+}) {
 
   return (
     <html lang="en">
       <head>
+        {/* Consent Mode v2 — must run before GTM */}
+        <Script id="consent-init" strategy="beforeInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+          });
+          try {
+            var _saved = localStorage.getItem('cookie_consent');
+            if (_saved) {
+              gtag('consent', 'update', {
+                analytics_storage: localStorage.getItem('cookie_consent_analytics') === 'true' ? 'granted' : 'denied',
+                ad_storage: localStorage.getItem('cookie_consent_marketing') === 'true' ? 'granted' : 'denied',
+                ad_user_data: localStorage.getItem('cookie_consent_marketing') === 'true' ? 'granted' : 'denied',
+                ad_personalization: localStorage.getItem('cookie_consent_marketing') === 'true' ? 'granted' : 'denied'
+              });
+            }
+          } catch(e) {}
+        `}</Script>
+
         <Script id="gtm" strategy="afterInteractive">{`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -46,8 +72,8 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-5SJCBSFK');
         `}</Script>
-
       </head>
+
       <body className={`${dmSerif.variable} ${poppins.variable} font-sans m-0`}>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJCBSFK" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe>
@@ -79,8 +105,21 @@ export default function RootLayout({
               </svg>
             </Link>
           </div>
+          <ul className="flex text-center justify-center gap-6">
+            <li>
+              <Link href="/privacy-policy" className="text-sand/40 text-xs font-light tracking-widest uppercase hover:text-sand/70 transition-colors duration-300">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="/cookie-policy" className="text-sand/40 text-xs font-light tracking-widest uppercase hover:text-sand/70 transition-colors duration-300">Cookie Policy</Link>
+            </li>
+            <li>
+              <CookieSettingsLink />
+            </li>
+          </ul>
           <p className="text-sand/30 text-center text-xs font-extralight tracking-widest">Made with ♥ in Italy</p>
         </div>
+
+        <CookieBanner />
 
       </body>
     </html>
