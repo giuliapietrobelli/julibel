@@ -3,6 +3,7 @@ import { DM_Serif_Display, Poppins } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 import Script from 'next/script'
+import { headers } from 'next/headers'
 import Header from './header'
 import CookieBanner from './cookie-banner'
 import CookieSettingsLink from './cookie-settings-link'
@@ -37,6 +38,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const isEU = headers().get('x-is-eu') !== '0'
 
   return (
     <html lang="en">
@@ -112,14 +114,16 @@ export default function RootLayout({
             <li>
               <Link href="/cookie-policy" className="text-sand/40 text-xs font-light tracking-widest uppercase hover:text-sand/70 transition-colors duration-300">Cookie Policy</Link>
             </li>
-            <li>
-              <CookieSettingsLink />
-            </li>
+            {isEU && (
+              <li>
+                <CookieSettingsLink />
+              </li>
+            )}
           </ul>
           <p className="text-sand/30 text-center text-xs font-extralight tracking-widest">Made with ♥ in Italy</p>
         </div>
 
-        <CookieBanner />
+        {isEU && <CookieBanner />}
 
       </body>
     </html>
