@@ -6,6 +6,7 @@ import Script from 'next/script'
 import { headers } from 'next/headers'
 import Header from './header'
 import CookieBanner from './cookie-banner'
+import { HIDE_COOKIE_BANNER_GLOBALLY } from '../lib/siteFlags'
 import CookieSettingsLink from './cookie-settings-link'
 
 const dmSerif = DM_Serif_Display({
@@ -66,6 +67,18 @@ export default function RootLayout({
             }
           } catch(e) {}
         `}</Script>
+
+        {HIDE_COOKIE_BANNER_GLOBALLY && (
+          <Script id="hide-cookie-banner" strategy="beforeInteractive">{`
+            try {
+              if (!localStorage.getItem('cookie_consent')) {
+                localStorage.setItem('cookie_consent', 'saved');
+                localStorage.setItem('cookie_consent_analytics', 'false');
+                localStorage.setItem('cookie_consent_marketing', 'false');
+              }
+            } catch(e) {}
+          `}</Script>
+        )}
 
         <Script id="gtm" strategy="afterInteractive">{`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
