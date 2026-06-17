@@ -136,7 +136,7 @@ export default function RootLayout({
           <p className="text-sand/30 text-center text-xs font-extralight tracking-widest">Made with ♥ in Italy</p>
         </div>
 
-        {isEU && <CookieBanner />}
+        {isEU && !HIDE_COOKIE_BANNER_GLOBALLY && <CookieBanner />}
 
       </body>
     </html>
