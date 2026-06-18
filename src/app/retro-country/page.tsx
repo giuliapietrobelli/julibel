@@ -39,7 +39,7 @@ export default async function Collection1() {
 
       <CollectionMockups
         images={await getMockups('retro-country')}
-        palette={['#D9CEBC', '#8899B2', '#C9A94D']}
+        palette={['#6A86A0', '#A88630', '#DAD2C0']}
       />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1453699-retro-country-by-julibel_studio" />

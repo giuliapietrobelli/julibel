@@ -39,7 +39,7 @@ export default async function Collection2() {
 
       <CollectionMockups
         images={await getMockups('secret-garden')}
-        palette={['#5B7C52', '#C4A8A8', '#E6DDCC']}
+        palette={['#3B6A88', '#877152', '#CC5E39']}
       />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/938595-secret-garden-by-julibel_studio" />
