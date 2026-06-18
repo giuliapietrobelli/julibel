@@ -121,7 +121,7 @@ export default function CollectionMockups({
   const active = images[activeIndex]
 
   return (
-    <section className="pt-16 pb-[120px]">
+    <section className="pt-16 pb-8">
       <div className="container">
         <div className="px-8 md:px-12">
           <Dialog

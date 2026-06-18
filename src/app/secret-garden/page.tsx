@@ -4,6 +4,7 @@ import PaginationLinks from '../pagination-links'
 import GalleryGrid from '../gallery-grid'
 import ParallaxHero from '../parallax-hero'
 import CollectionMockups from '../collection-mockups'
+import SectionDivider from '../section-divider'
 import { getMockups } from '@/lib/getMockups'
 import { designs } from './designs'
 
@@ -41,10 +42,10 @@ export default async function Collection2() {
         palette={['#5B7C52', '#C4A8A8', '#E6DDCC']}
       />
 
-      <div className="bg-white">
-        <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
-          <GalleryGrid items={images} />
-        </div>
+      <SectionDivider shopUrl="https://www.spoonflower.com/collections/938595-secret-garden-by-julibel_studio" />
+
+      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
+        <GalleryGrid items={images} />
       </div>
 
       <PaginationLinks
