@@ -132,7 +132,7 @@ export default function CollectionMockups({
               {images.map((img, i) => (
                 <div
                   key={i}
-                  className={`group relative cursor-pointer overflow-hidden rounded-[10px] ${CARD_CLASSES[spans[i]]}`}
+                  className={`group relative cursor-pointer overflow-hidden rounded-sm ${CARD_CLASSES[spans[i]]}`}
                   onClick={() => setLightboxIndex(i)}
                 >
                   <Image
@@ -150,7 +150,7 @@ export default function CollectionMockups({
               {fillers.map((color, i) => (
                 <div
                   key={`filler-${i}`}
-                  className="hidden md:block col-span-1 row-span-1 rounded-[10px]"
+                  className="hidden md:block col-span-1 row-span-1 rounded-sm"
                   style={{ backgroundColor: color }}
                 />
               ))}
