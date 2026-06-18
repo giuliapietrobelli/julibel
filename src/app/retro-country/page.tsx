@@ -36,16 +36,16 @@ export default async function Collection1() {
         </Link>
       </ParallaxHero>
 
+      <CollectionMockups
+        images={await getMockups('retro-country')}
+        palette={['#D9CEBC', '#8899B2', '#C9A94D']}
+      />
+
       <div className="bg-white">
         <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
           <GalleryGrid items={images} />
         </div>
       </div>
-
-      <CollectionMockups
-        images={await getMockups('retro-country')}
-        palette={['#D9CEBC', '#8899B2', '#C9A94D']}
-      />
 
       <PaginationLinks
         prev="Soft Tide"
