@@ -3,6 +3,8 @@ import CtaSection from '../cta-section'
 import PaginationLinks from '../pagination-links'
 import GalleryGrid from '../gallery-grid'
 import ParallaxHero from '../parallax-hero'
+import CollectionMockups from '../collection-mockups'
+import { getMockups } from '@/lib/getMockups'
 import { designs } from './designs'
 
 const toShopUrl = (src: string) => {
@@ -17,7 +19,7 @@ const images = designs.map((d) => ({
   href: toShopUrl(d.src),
 }))
 
-export default function Collection2() {
+export default async function Collection2() {
   return (
     <>
       <ParallaxHero
@@ -34,9 +36,16 @@ export default function Collection2() {
         </Link>
       </ParallaxHero>
 
-      <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
-        <GalleryGrid items={images} />
+      <div className="bg-white">
+        <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-16 pb-20">
+          <GalleryGrid items={images} />
+        </div>
       </div>
+
+      <CollectionMockups
+        images={await getMockups('secret-garden')}
+        palette={['#5B7C52', '#C4A8A8', '#E6DDCC']}
+      />
 
       <PaginationLinks
         prev="Retro Country"
