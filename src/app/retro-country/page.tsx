@@ -39,7 +39,7 @@ export default async function Collection1() {
 
       <CollectionMockups
         images={await getMockups('retro-country')}
-        palette={['#B8A07A', '#DDD6C0', '#F4F0E8', '#4A617A', '#7090A8', '#A88828', '#DCC870']}
+        palette={['#B8A07A', '#DDD6C0', '#DDD6C0', '#4A617A', '#7090A8', '#A88828', '#DCC870']}
         tallAll
         spanOverrides={{ 8: 'normal' }}
       />
