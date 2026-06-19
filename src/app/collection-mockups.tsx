@@ -13,13 +13,13 @@ function altFromSrc(src: string): string {
 type SpanType = 'featured' | 'tall' | 'normal'
 
 const CARD_CLASSES: Record<SpanType, string> = {
-  featured: 'col-span-1 row-span-1 md:col-span-2 md:row-span-2',
+  featured: 'col-span-1 row-span-1 md:col-span-2 md:row-span-3',
   tall:     'col-span-1 row-span-1 md:row-span-3',
   normal:   'col-span-1 row-span-1 md:row-span-2',
 }
 
 const DESKTOP_SIZE: Record<SpanType | 'small', [number, number]> = {
-  featured: [2, 2],
+  featured: [2, 3],
   tall:     [1, 3],
   normal:   [1, 2],
   small:    [1, 1],
