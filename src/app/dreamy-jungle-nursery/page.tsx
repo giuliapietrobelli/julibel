@@ -37,7 +37,11 @@ export default async function DreamyJungleNursery() {
         </Link>
       </ParallaxHero>
 
-      <CollectionMockups images={await getMockups('dreamy-jungle-nursery')} />
+      <CollectionMockups
+        images={await getMockups('dreamy-jungle-nursery')}
+        palette={['#E5E5DF', '#4A6870', '#6A8890', '#A4B0B8', '#9AADA8', '#D4C478', '#C08C68', '#978070', '#C4B09A']}
+        tallAll
+      />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1493529-dreamy-jungle-nursery-by-julibel_studio" />
 
