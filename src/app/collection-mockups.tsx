@@ -10,76 +10,81 @@ function altFromSrc(src: string): string {
   return name.replace(/\.[^.]+$/, '').replace(/^\d+[-_]?/, '').replace(/[-_]+/g, ' ').trim()
 }
 
-type SpanType = 'featured' | 'tall' | 'normal'
+type SpanType = 'featured' | 'tall' | 'normal' | 'pattern'
 
 const CARD_CLASSES: Record<SpanType, string> = {
-  featured: 'col-span-1 row-span-1 md:col-span-2 md:row-span-3',
-  tall:     'col-span-1 row-span-1 md:row-span-3',
-  normal:   'col-span-1 row-span-1 md:row-span-2',
+  featured: 'col-span-1 row-span-1 md:col-span-4 md:row-span-4',
+  tall:     'col-span-1 row-span-1 md:col-span-2 md:row-span-3',
+  normal:   'col-span-1 row-span-1 md:col-span-2 md:row-span-2',
+  pattern:  'col-span-1 row-span-1 md:col-span-2 md:row-span-1',
 }
 
 const DESKTOP_SIZE: Record<SpanType | 'small', [number, number]> = {
-  featured: [2, 3],
-  tall:     [1, 3],
-  normal:   [1, 2],
+  featured: [4, 4],
+  tall:     [2, 3],
+  normal:   [2, 2],
+  pattern:  [2, 1],
   small:    [1, 1],
 }
 
-function assignSpans(images: MockupImage[]): SpanType[] {
+function countGaps(spans: (SpanType | 'small')[]): number {
+  const COLS = 6, ROWS = 24
+  const grid: boolean[][] = Array.from({ length: ROWS }, () => Array(COLS).fill(false))
+  const place = (cs: number, rs: number) => {
+    for (let r = 0; r <= ROWS - rs; r++)
+      for (let c = 0; c <= COLS - cs; c++) {
+        let ok = true
+        scan: for (let dr = 0; dr < rs; dr++)
+          for (let dc = 0; dc < cs; dc++)
+            if (grid[r+dr][c+dc]) { ok = false; break scan }
+        if (ok) {
+          for (let dr = 0; dr < rs; dr++)
+            for (let dc = 0; dc < cs; dc++)
+              grid[r+dr][c+dc] = true
+          return
+        }
+      }
+  }
+  for (const s of spans) place(...DESKTOP_SIZE[s])
+  let lastRow = 0
+  for (let r = 0; r < ROWS; r++) if (grid[r].some(Boolean)) lastRow = r
+  let gaps = 0
+  for (let r = 0; r <= lastRow; r++)
+    for (let c = 0; c < COLS; c++)
+      if (!grid[r][c]) gaps++
+  return gaps
+}
+
+function assignSpans(
+  images: MockupImage[],
+  tallAll = false,
+  overrides: Partial<Record<number, SpanType>> = {}
+): SpanType[] {
   let tallAssigned = false
   return images.map((img, i) => {
+    if (overrides[i] !== undefined) return overrides[i]!
     if (i === 0) return 'featured'
-    if (!tallAssigned && img.width / img.height < 0.85) {
-      tallAssigned = true
-      return 'tall'
-    }
+    const ar = img.width / img.height
+    if ((tallAll || !tallAssigned) && ar < 0.85) { tallAssigned = true; return 'tall' }
+    if (ar >= 0.85 && ar <= 1.15) return 'pattern'
     return 'normal'
   })
 }
 
-function countGaps(imageSpans: SpanType[], cols: number): number {
-  const ROWS = 24
-  const grid: boolean[][] = Array.from({ length: ROWS }, () => Array(cols).fill(false))
-
-  const place = (cs: number, rs: number) => {
-    for (let r = 0; r <= ROWS - rs; r++) {
-      for (let c = 0; c <= cols - cs; c++) {
-        let ok = true
-        scan: for (let dr = 0; dr < rs; dr++)
-          for (let dc = 0; dc < cs; dc++)
-            if (grid[r + dr][c + dc]) { ok = false; break scan }
-        if (ok) {
-          for (let dr = 0; dr < rs; dr++)
-            for (let dc = 0; dc < cs; dc++)
-              grid[r + dr][c + dc] = true
-          return
-        }
-      }
-    }
-  }
-
-  for (const s of imageSpans) {
-    const [cs, rs] = DESKTOP_SIZE[s]
-    place(cs, rs)
-  }
-
-  let lastRow = 0
-  for (let r = 0; r < ROWS; r++) if (grid[r].some(Boolean)) lastRow = r
-
-  let gaps = 0
-  for (let r = 0; r <= lastRow; r++)
-    for (let c = 0; c < cols; c++)
-      if (!grid[r][c]) gaps++
-
-  return gaps
-}
+type GridItem =
+  | { kind: 'image'; img: MockupImage; span: SpanType; idx: number }
+  | { kind: 'palette'; color: string }
 
 export default function CollectionMockups({
   images,
   palette = [],
+  tallAll = false,
+  spanOverrides = {},
 }: {
   images: MockupImage[]
   palette?: string[]
+  tallAll?: boolean
+  spanOverrides?: Partial<Record<number, SpanType>>
 }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | undefined>(undefined)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -114,10 +119,26 @@ export default function CollectionMockups({
 
   if (images.length === 0) return null
 
-  const COLS = 3
-  const spans = assignSpans(images)
-  const gapCount = palette.length > 0 ? Math.min(countGaps(spans, COLS), palette.length) : 0
-  const fillers = palette.slice(0, gapCount)
+  const spans = assignSpans(images, tallAll, spanOverrides)
+
+  // Step 1: interleave 1 palette tile after every 2nd image
+  const interleaved: GridItem[] = []
+  let palIdx = 0
+  for (let i = 0; i < images.length; i++) {
+    interleaved.push({ kind: 'image', img: images[i], span: spans[i], idx: i })
+    if (palette.length > 0 && (i + 1) % 2 === 0 && palIdx < palette.length) {
+      interleaved.push({ kind: 'palette', color: palette[palIdx++] })
+    }
+  }
+  // Step 2: add only as many end tiles as there are remaining gaps
+  const gapCount = palette.length > 0
+    ? countGaps(interleaved.map(item => item.kind === 'image' ? item.span : 'small'))
+    : 0
+  const items = [...interleaved]
+  for (let i = 0; i < gapCount && palIdx < palette.length; i++) {
+    items.push({ kind: 'palette', color: palette[palIdx++] })
+  }
+
   const active = images[activeIndex]
 
   return (
@@ -128,32 +149,33 @@ export default function CollectionMockups({
             open={lightboxIndex !== undefined}
             onOpenChange={(open) => { if (!open) setLightboxIndex(undefined) }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 sm:auto-rows-[220px] md:auto-rows-[120px] grid-flow-row-dense">
-              {images.map((img, i) => (
-                <div
-                  key={i}
-                  className={`group relative cursor-pointer overflow-hidden rounded-sm ${CARD_CLASSES[spans[i]]}`}
-                  onClick={() => setLightboxIndex(i)}
-                >
-                  <Image
-                    src={img.src}
-                    alt={altFromSrc(img.src)}
-                    width={img.width}
-                    height={img.height}
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 35vw"
-                    className="w-full h-auto sm:h-full sm:object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
-                    loading="lazy"
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 sm:auto-rows-[220px] md:auto-rows-[120px] grid-flow-row-dense">
+              {items.map((item, i) =>
+                item.kind === 'image' ? (
+                  <div
+                    key={`img-${item.idx}`}
+                    className={`group relative cursor-pointer overflow-hidden rounded-sm ${CARD_CLASSES[item.span]}`}
+                    onClick={() => setLightboxIndex(item.idx)}
+                  >
+                    <Image
+                      src={item.img.src}
+                      alt={altFromSrc(item.img.src)}
+                      width={item.img.width}
+                      height={item.img.height}
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 35vw"
+                      className="w-full h-auto sm:h-full sm:object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-500 pointer-events-none" />
+                  </div>
+                ) : (
+                  <div
+                    key={`pal-${i}`}
+                    className="hidden md:block col-span-1 row-span-1 rounded-sm"
+                    style={{ backgroundColor: item.color }}
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-500 pointer-events-none" />
-                </div>
-              ))}
-              {fillers.map((color, i) => (
-                <div
-                  key={`filler-${i}`}
-                  className="hidden md:block col-span-1 row-span-1 rounded-sm"
-                  style={{ backgroundColor: color }}
-                />
-              ))}
+                )
+              )}
             </div>
 
             <DialogContent className="max-w-4xl w-[92vw] bg-transparent border-0 shadow-none p-8 [&>button]:text-white/70 [&>button]:hover:text-white">

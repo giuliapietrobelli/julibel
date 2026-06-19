@@ -10,18 +10,23 @@ type GalleryItem = {
   title?: string
 }
 
-export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
+export default function GalleryGrid({ items, initialCount }: { items: GalleryItem[]; initialCount?: number }) {
   const [visibleCount, setVisibleCount] = useState(0)
+  const [expanded, setExpanded] = useState(false)
+
+  const displayedItems = !initialCount || expanded ? items : items.slice(0, initialCount)
+  const hasMore = !!initialCount && !expanded && items.length > initialCount
 
   useEffect(() => {
-    if (visibleCount >= items.length) return
+    if (visibleCount >= displayedItems.length) return
     const timeout = setTimeout(() => setVisibleCount((n) => n + 1), 120)
     return () => clearTimeout(timeout)
-  }, [visibleCount, items.length])
+  }, [visibleCount, displayedItems.length])
 
   return (
+    <div>
     <div className="grid grid-cols-2 md:grid-cols-5 gap-6 px-8 md:px-20">
-      {items.map((image, index) => {
+      {displayedItems.map((image, index) => {
         const animClass = `relative leading-[0] transition-all duration-700 ease-out ${index < visibleCount ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`
         const overlay = image.title ? (
           <div className="flex flex-col items-center justify-center gap-2 absolute inset-0 bg-white opacity-0 hover:opacity-75 transition-opacity duration-500 z-10">
@@ -49,6 +54,17 @@ export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
           </div>
         )
       })}
+    </div>
+    {hasMore && (
+      <div className="flex justify-center mt-10">
+        <button
+          onClick={() => setExpanded(true)}
+          className="px-8 py-3 border border-[#4A4644] text-[#4A4644] text-xs font-light tracking-wider hover:bg-[#4A4644] hover:text-white transition-colors duration-300"
+        >
+          Load More
+        </button>
+      </div>
+    )}
     </div>
   )
 }

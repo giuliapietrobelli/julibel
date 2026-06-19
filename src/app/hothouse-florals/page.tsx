@@ -42,7 +42,7 @@ export default async function HothouseFlorals() {
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1496936-hothouse-florals-by-julibel_studio" />
 
       <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
-        <GalleryGrid items={images} />
+        <GalleryGrid items={images} initialCount={5} />
       </div>
 
       <PaginationLinks

@@ -39,13 +39,14 @@ export default async function Collection2() {
 
       <CollectionMockups
         images={await getMockups('secret-garden')}
-        palette={['#3B6A88', '#877152', '#CC5E39']}
+        palette={['#F0E5DF', '#D9B4AC', '#CC6040', '#A04040', '#B07820', '#8A7060', '#6A5040', '#6080A0', '#2B5F80', '#1A3040']}
+        tallAll
       />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/938595-secret-garden-by-julibel_studio" />
 
       <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
-        <GalleryGrid items={images} />
+        <GalleryGrid items={images} initialCount={5} />
       </div>
 
       <PaginationLinks

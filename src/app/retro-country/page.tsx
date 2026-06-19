@@ -39,13 +39,15 @@ export default async function Collection1() {
 
       <CollectionMockups
         images={await getMockups('retro-country')}
-        palette={['#6A86A0', '#A88630', '#DAD2C0']}
+        palette={['#B8A07A', '#DDD6C0', '#F4F0E8', '#4A617A', '#7090A8', '#A88828', '#DCC870']}
+        tallAll
+        spanOverrides={{ 8: 'normal' }}
       />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1453699-retro-country-by-julibel_studio" />
 
       <div className="animate-fade-up container flex flex-col gap-10 md:gap-20 pt-8 pb-20">
-        <GalleryGrid items={images} />
+        <GalleryGrid items={images} initialCount={5} />
       </div>
 
       <PaginationLinks
