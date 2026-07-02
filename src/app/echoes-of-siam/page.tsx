@@ -37,7 +37,11 @@ export default async function Collection5() {
         </Link>
       </ParallaxHero>
 
-      <CollectionMockups images={await getMockups('echoes-of-siam')} />
+      <CollectionMockups
+        images={await getMockups('echoes-of-siam')}
+        palette={['#C0C2B9', '#96865C', '#EBCAA9', '#B1B137', '#F4E4D0', '#4E3B21', '#C0C2B9', '#96865C', '#EBCAA9']}
+        tallAll
+      />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1360307-echoes-siam-by-julibel" />
 
