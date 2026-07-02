@@ -37,7 +37,11 @@ export default async function Collection3() {
         </Link>
       </ParallaxHero>
 
-      <CollectionMockups images={await getMockups('soft-tide')} />
+      <CollectionMockups
+        images={await getMockups('soft-tide')}
+        palette={['#5E7183', '#91A3B8', '#BFC9D3', '#D2CCC2', '#5E7183', '#91A3B8', '#BFC9D3', '#D2CCC2']}
+        spanOverrides={{ 7: 'wide', 9: 'normal' }}
+      />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1483469-soft-tide-by-julibel_studio" />
 
