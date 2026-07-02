@@ -37,7 +37,11 @@ export default async function Illustrations() {
         </Link>
       </ParallaxHero>
 
-      <CollectionMockups images={await getMockups('playful-cats')} />
+      <CollectionMockups
+        images={await getMockups('playful-cats')}
+        palette={['#FACAAF', '#D3A03E', '#E1BD6F', '#4157C6', '#D5BDEB', '#FACAAF', '#4157C6', '#E1BD6F', '#D5BDEB']}
+        spanOverrides={{ 1: 'normal', 2: 'tall' }}
+      />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1357811-playful-cats-by-julibel" />
 
