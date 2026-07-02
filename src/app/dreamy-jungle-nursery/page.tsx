@@ -39,8 +39,9 @@ export default async function DreamyJungleNursery() {
 
       <CollectionMockups
         images={await getMockups('dreamy-jungle-nursery')}
-        palette={['#E5E5DF', '#4A6870', '#6A8890', '#A4B0B8', '#9AADA8', '#D4C478', '#C08C68', '#978070', '#C4B09A']}
+        palette={['#54696B', '#7D8D8C', '#B3B8C0', '#ACB6B1', '#DDC99B', '#C49675', '#A49985', '#C9BCA8']}
         tallAll
+        spanOverrides={{ 4: 'tall-center' }}
       />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/1493529-dreamy-jungle-nursery-by-julibel_studio" />
