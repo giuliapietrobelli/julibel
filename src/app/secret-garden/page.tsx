@@ -39,8 +39,9 @@ export default async function Collection2() {
 
       <CollectionMockups
         images={await getMockups('secret-garden')}
-        palette={['#F0E5DF', '#D9B4AC', '#CC6040', '#A04040', '#B07820', '#8A7060', '#6A5040', '#6080A0', '#2B5F80', '#1A3040']}
+        palette={['#E6CFC7', '#C1704A', '#8B5342', '#657B98', '#4C6780', '#5D5346', '#A57538', '#83745C', '#2A3943']}
         tallAll
+        spanOverrides={{ 5: 'pattern-right' }}
       />
 
       <SectionDivider shopUrl="https://www.spoonflower.com/collections/938595-secret-garden-by-julibel_studio" />

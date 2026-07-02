@@ -10,23 +10,25 @@ function altFromSrc(src: string): string {
   return name.replace(/\.[^.]+$/, '').replace(/^\d+[-_]?/, '').replace(/[-_]+/g, ' ').trim()
 }
 
-type SpanType = 'featured' | 'wide' | 'tall' | 'normal' | 'pattern'
+type SpanType = 'featured' | 'wide' | 'tall' | 'normal' | 'pattern' | 'pattern-right'
 
 const CARD_CLASSES: Record<SpanType, string> = {
-  featured: 'col-span-1 row-span-1 md:col-span-4 md:row-span-4',
-  wide:     'col-span-1 row-span-1 md:col-start-4 md:col-span-3 md:row-span-3',
-  tall:     'col-span-1 row-span-1 md:col-span-2 md:row-span-3',
-  normal:   'col-span-1 row-span-1 md:col-span-2 md:row-span-2',
-  pattern:  'col-span-1 row-span-1 md:col-span-2 md:row-span-1',
+  featured:      'col-span-1 row-span-1 md:col-span-4 md:row-span-4',
+  wide:          'col-span-1 row-span-1 md:col-start-4 md:col-span-3 md:row-span-3',
+  tall:          'col-span-1 row-span-1 md:col-span-2 md:row-span-3',
+  normal:        'col-span-1 row-span-1 md:col-span-2 md:row-span-2',
+  pattern:       'col-span-1 row-span-1 md:col-span-2 md:row-span-1',
+  'pattern-right': 'col-span-1 row-span-1 md:col-start-5 md:col-span-2 md:row-span-1',
 }
 
 const DESKTOP_SIZE: Record<SpanType | 'small', [number, number]> = {
-  featured: [4, 4],
-  wide:     [3, 3],
-  tall:     [2, 3],
-  normal:   [2, 2],
-  pattern:  [2, 1],
-  small:    [1, 1],
+  featured:      [4, 4],
+  wide:          [3, 3],
+  tall:          [2, 3],
+  normal:        [2, 2],
+  pattern:       [2, 1],
+  'pattern-right': [2, 1],
+  small:         [1, 1],
 }
 
 function countGaps(spans: (SpanType | 'small')[]): number {
