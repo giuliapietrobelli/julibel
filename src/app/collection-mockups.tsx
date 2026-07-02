@@ -5,6 +5,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import type { MockupImage } from '@/lib/getMockups'
 
+const FADE_MS = 450
+
 function altFromSrc(src: string): string {
   const name = src.split('/').pop() ?? ''
   return name.replace(/\.[^.]+$/, '').replace(/^\d+[-_]?/, '').replace(/[-_]+/g, ' ').trim()
@@ -91,24 +93,30 @@ export default function CollectionMockups({
   spanOverrides?: Partial<Record<number, SpanType>>
 }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | undefined>(undefined)
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [fading, setFading] = useState(false)
+  const [displayIdx, setDisplayIdx] = useState(0)
+  const [incomingIdx, setIncomingIdx] = useState<number | null>(null)
+  const [crossfading, setCrossfading] = useState(false)
 
-  // Sync displayed image when lightbox opens
+  // Reset when lightbox opens
   useEffect(() => {
     if (lightboxIndex !== undefined) {
-      setActiveIndex(lightboxIndex)
-      setFading(false)
+      setDisplayIdx(lightboxIndex)
+      setIncomingIdx(null)
+      setCrossfading(false)
     }
   }, [lightboxIndex])
 
   const navigate = useCallback((dir: 1 | -1) => {
-    setFading(true)
+    if (incomingIdx !== null) return
+    const next = (displayIdx + dir + images.length) % images.length
+    setIncomingIdx(next)
+    setCrossfading(true)
     setTimeout(() => {
-      setActiveIndex(prev => (prev + dir + images.length) % images.length)
-      setFading(false)
-    }, 300)
-  }, [images.length])
+      setDisplayIdx(next)
+      setIncomingIdx(null)
+      setCrossfading(false)
+    }, FADE_MS + 50)
+  }, [displayIdx, incomingIdx, images.length])
 
   // Keyboard navigation
   useEffect(() => {
@@ -143,7 +151,7 @@ export default function CollectionMockups({
     items.push({ kind: 'palette', color: palette[palIdx++] })
   }
 
-  const active = images[activeIndex]
+  const imgStyle = { maxHeight: '72vh', width: 'auto', maxWidth: '100%', height: 'auto' } as const
 
   return (
     <section className="pt-16 pb-8">
@@ -184,16 +192,32 @@ export default function CollectionMockups({
 
             <DialogContent className="max-w-4xl w-[92vw] bg-transparent border-0 shadow-none p-8 [&>button]:text-white/70 [&>button]:hover:text-white">
               <div className="relative flex items-center justify-center min-h-[55vh]">
-                <div className={`transition-all duration-300 ease-in-out ${fading ? 'opacity-0 scale-[0.97]' : 'opacity-100 scale-100'}`}>
-                  <Image
-                    src={active.src}
-                    alt={altFromSrc(active.src)}
-                    width={active.width}
-                    height={active.height}
-                    style={{ maxHeight: '72vh', width: 'auto', maxWidth: '100%', height: 'auto' }}
-                    priority
-                  />
-                </div>
+                {/* Base image — fades out during crossfade */}
+                <Image
+                  src={images[displayIdx].src}
+                  alt={altFromSrc(images[displayIdx].src)}
+                  width={images[displayIdx].width}
+                  height={images[displayIdx].height}
+                  style={{ ...imgStyle, animation: crossfading ? `lightbox-fade-out ${FADE_MS}ms ease-in-out forwards` : undefined }}
+                  priority
+                />
+
+                {/* Incoming image — fades in on top as soon as it mounts */}
+                {incomingIdx !== null && (
+                  <div
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{ animation: `lightbox-fade-in ${FADE_MS}ms ease-in-out forwards` }}
+                  >
+                    <Image
+                      src={images[incomingIdx].src}
+                      alt={altFromSrc(images[incomingIdx].src)}
+                      width={images[incomingIdx].width}
+                      height={images[incomingIdx].height}
+                      style={imgStyle}
+                      priority
+                    />
+                  </div>
+                )}
 
                 {images.length > 1 && (
                   <>
@@ -217,7 +241,7 @@ export default function CollectionMockups({
 
               {images.length > 1 && (
                 <p className="text-center text-xs tracking-widest text-white/50 mt-5">
-                  {activeIndex + 1} / {images.length}
+                  {displayIdx + 1} / {images.length}
                 </p>
               )}
             </DialogContent>
