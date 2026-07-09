@@ -73,7 +73,7 @@ export default function RootLayout({
             try {
               if (!localStorage.getItem('cookie_consent')) {
                 localStorage.setItem('cookie_consent', 'saved');
-                localStorage.setItem('cookie_consent_analytics', 'false');
+                localStorage.setItem('cookie_consent_analytics', 'true');
                 localStorage.setItem('cookie_consent_marketing', 'false');
               }
             } catch(e) {}
