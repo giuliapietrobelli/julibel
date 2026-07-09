@@ -49,7 +49,7 @@ export default function RootLayout({
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('consent', 'default', {
-            analytics_storage: 'denied',
+            analytics_storage: '${HIDE_COOKIE_BANNER_GLOBALLY ? 'granted' : 'denied'}',
             ad_storage: 'denied',
             ad_user_data: 'denied',
             ad_personalization: 'denied',
