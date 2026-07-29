@@ -121,10 +121,10 @@ export default function RootLayout({
           </div>
           <ul className="flex text-center justify-center gap-6">
             <li>
-              <Link href="/privacy-policy" className="text-sand/40 text-xs font-light tracking-widest uppercase hover:text-sand/70 transition-colors duration-300">Privacy Policy</Link>
+              <Link href="/privacy-policy" className="text-sand/40 text-[9px] font-light tracking-widest lowercase hover:text-sand/70 transition-colors duration-300">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/cookie-policy" className="text-sand/40 text-xs font-light tracking-widest uppercase hover:text-sand/70 transition-colors duration-300">Cookie Policy</Link>
+              <Link href="/cookie-policy" className="text-sand/40 text-[9px] font-light tracking-widest lowercase hover:text-sand/70 transition-colors duration-300">Cookie Policy</Link>
             </li>
             {isEU && (
               <li>
