@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { DM_Serif_Display, Poppins } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
@@ -8,6 +9,7 @@ import Header from './header'
 import CookieBanner from './cookie-banner'
 import { HIDE_COOKIE_BANNER_GLOBALLY } from '../lib/siteFlags'
 import CookieSettingsLink from './cookie-settings-link'
+import GtmLoader from './gtm-loader'
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -48,11 +50,16 @@ export default function RootLayout({
         <Script id="consent-init" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          // Global Privacy Control: honour it as an opt-out of ad_storage/ad_user_data/
+          // ad_personalization (sale/share of data for advertising) for visitors outside
+          // the EU/EEA/UK too, since GDPR-region visitors already default to denied.
+          var _gpc = (typeof navigator !== 'undefined' && navigator.globalPrivacyControl === true);
+          var _denyAds = ${isEU} || _gpc;
           gtag('consent', 'default', {
-            analytics_storage: '${HIDE_COOKIE_BANNER_GLOBALLY ? 'granted' : 'denied'}',
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
+            analytics_storage: '${isEU ? 'denied' : 'granted'}',
+            ad_storage: _denyAds ? 'denied' : 'granted',
+            ad_user_data: _denyAds ? 'denied' : 'granted',
+            ad_personalization: _denyAds ? 'denied' : 'granted',
             wait_for_update: 500
           });
           try {
@@ -79,20 +86,12 @@ export default function RootLayout({
             } catch(e) {}
           `}</Script>
         )}
-
-        <Script id="gtm" strategy="afterInteractive">{`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-5SJCBSFK');
-        `}</Script>
       </head>
 
       <body className={`${dmSerif.variable} ${poppins.variable} font-sans m-0`}>
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJCBSFK" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe>
-        </noscript>
+        <Suspense fallback={null}>
+          <GtmLoader isEU={isEU} />
+        </Suspense>
 
         <Header />
 

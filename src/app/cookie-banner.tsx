@@ -26,6 +26,10 @@ function persist(prefs: Prefs) {
   localStorage.setItem('cookie_consent_marketing', String(prefs.marketing))
 }
 
+function announce(prefs: Prefs) {
+  window.dispatchEvent(new CustomEvent('consent-decided', { detail: prefs }))
+}
+
 function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
   return (
     <button
@@ -61,7 +65,7 @@ export default function CookieBanner() {
 
   if (!visible) return null
 
-  const commit = (p: Prefs) => { persist(p); applyConsent(p); setVisible(false); setShowPrefs(false) }
+  const commit = (p: Prefs) => { persist(p); applyConsent(p); announce(p); setVisible(false); setShowPrefs(false) }
 
   if (showPrefs) return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-charcoal border-t border-sand/10 px-6 py-8 md:px-12">
